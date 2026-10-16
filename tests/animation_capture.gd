@@ -8,10 +8,17 @@ func _initialize() -> void:
 	call_deferred("capture")
 
 func capture() -> void:
-	var output := "/tmp/neon-fluid-captures"
+	var output := "/tmp/neon-articulated-captures"
 	var args := OS.get_cmdline_user_args()
 	if args.has("--capture-dir"):
 		output = args[args.find("--capture-dir") + 1]
+	var capture_start := 0
+	var capture_end := 240
+	if args.has("--capture-start"):
+		capture_start = int(args[args.find("--capture-start") + 1])
+	if args.has("--capture-end"):
+		capture_end = int(args[args.find("--capture-end") + 1])
+	assert(capture_start >= 0 and capture_end <= 240 and capture_start < capture_end)
 	DirAccess.make_dir_recursive_absolute(output)
 	var world = load("res://main.tscn").instantiate()
 	root.add_child(world)
@@ -28,6 +35,7 @@ func capture() -> void:
 		assert(not Layout.blocked(actor.position))
 		world.state.append(actor)
 	var observed: Dictionary = {}
+	var saved_frames := 0
 	for tick in 240:
 		var clip := "idle"
 		if tick >= 30 and tick < 75: clip = "walk"
@@ -49,11 +57,14 @@ func capture() -> void:
 		world.queue_redraw()
 		await process_frame
 		await RenderingServer.frame_post_draw
-		assert(root.get_texture().get_image().save_png(output.path_join("frame-%03d.png" % tick)) == OK)
+		if tick >= capture_start and tick < capture_end:
+			assert(root.get_texture().get_image().save_png(output.path_join("frame-%03d.png" % tick)) == OK)
+			saved_frames += 1
 		for actor in world.visuals.animation.actors.values():
 			observed[str(actor.clip)] = true
 	for clip in ["idle", "walk", "run", "attack"]:
 		assert(observed.has(clip), "Preview must render every animation state")
+	assert(saved_frames == capture_end - capture_start)
 	print("MESH_BUILD_US_PER_ACTOR ", float(world.visuals.rig.build_usec) / maxf(1, world.visuals.rig.build_count))
 	print("ANIMATION_CAPTURE_OK ", output)
 	quit()

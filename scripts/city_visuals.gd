@@ -225,9 +225,15 @@ func draw_ronin_weapon(pose: Dictionary, texture: Texture2D, screen_origin: Vect
 	var angle := 0.0
 	if pose.attacking:
 		# One continuous wrist arc; the whole blade remains a rigid layer.
-		angle = -sin(clampf(float(pose.attack_t), 0, 1) * PI) * 1.75
+		angle = float(pose.sword_angle)
 	var mirror := -1.0 if pose.mirror else 1.0
 	canvas.draw_set_transform_matrix(Transform2D(0, Vector2(mirror, 1), 0, screen_origin) * Transform2D(angle, hand))
+	if pose.attacking:
+		var t := clampf(float(pose.attack_t), 0, 1)
+		var trail := smoothstep(0.12, 0.30, t) * (1 - smoothstep(0.48, 0.65, t))
+		# Trail shares the blade's hand transform and rotation; no floating arc.
+		var tip := (Vector2(1830, 730) * texture.get_size() / Vector2(1983, 793) - ronin_grip) * scale
+		canvas.draw_arc(Vector2.ZERO, tip.length() * 0.9, tip.angle() - 0.1, tip.angle() + 0.35, 24, Color(PINK, trail * 0.5), 2, true)
 	canvas.draw_texture_rect_region(texture, Rect2(-(ronin_grip - ronin_weapon.position) * scale, ronin_weapon.size * scale), ronin_weapon, Color("e0ece4"), false, true)
 	canvas.draw_set_transform(screen_origin, 0, Vector2(mirror, 1))
 
@@ -246,6 +252,3 @@ func draw_attack_feedback(pose: Dictionary, color: Color) -> void:
 			muzzle.x -= float(pose.recoil) * CHARACTER_HEIGHT * 0.65
 			canvas.draw_line(muzzle, muzzle + Vector2(12 + alpha * 12, 1), Color(color, alpha), 2, true)
 			canvas.draw_circle(muzzle, 2 + alpha * 3, Color(color, alpha * 0.85))
-		"ronin":
-			var angle := lerpf(-1.5, 1.0, smoothstep(0, 1, t))
-			canvas.draw_arc(Vector2(14, -63), 43, angle - 0.5, angle, 24, Color(color, sin(t * PI) * 0.65), 2, true)

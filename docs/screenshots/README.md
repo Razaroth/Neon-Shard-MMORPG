@@ -12,7 +12,9 @@ Characters are now **another 20% larger** (164.4 pixels tall), with matching foo
 
 [Open animated GIF](animations.gif) · [Download MP4](animations.mp4) · [Previous six-pose version](https://raw.githubusercontent.com/Razaroth/Neon-Shard-MMORPG/79743d6/docs/screenshots/animations.gif)
 
-Staged Godot playback now uses actual moving actors and continuous 2D mesh motion: breathing, strides, walk/run blending, stopping, class-specific attacks and reversing direction. It replaces the uneven six-pose playback with stable class skins. Use WASD to walk, hold Shift to run, and hold Space to attack. This improves timing and consistency; it is not AAA release-quality animation. Full directional skeletal artwork, foot IK, hit/death reactions and further rig polish remain future work.
+Staged Godot playback now uses actual moving actors and continuous 2D mesh motion: breathing, strides, walk/run blending, stopping, class-specific attacks and reversing direction. It uses stable class skins, articulated knee joints, world-space foot contacts, shoulder counter-swing and a controlled sword strike/recovery. Use WASD to walk, hold Shift to run, and hold Space to attack. This improves timing and consistency; it is not AAA release-quality animation. Full directional skeletal artwork, foot IK, hit/death reactions and further rig polish remain future work.
+
+[Previous mesh-motion pass](https://raw.githubusercontent.com/Razaroth/Neon-Shard-MMORPG/cb5cc40/docs/screenshots/animations.gif)
 
 ## Maintenance Bay
 
