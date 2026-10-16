@@ -4,6 +4,8 @@ The active areas are **Kairo Exchange and its connected Maintenance Bay**, with 
 
 These are actual Godot renders with dynamic game actors. They are staged visual captures; real multiplayer combat and persistence were tested separately.
 
+Characters are now **50% larger** (114 pixels tall), with matching foot shadows and selection rings, raised labels, and adjusted column fading. These previews show the updated scale in both rooms.
+
 ## Maintenance Bay
 
 ![Playable maintenance bay](maintenance.png)
