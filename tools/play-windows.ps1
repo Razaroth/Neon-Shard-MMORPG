@@ -8,13 +8,14 @@ $projectRoot = Split-Path -Parent $PSScriptRoot
 $dataRoot = Join-Path $env:LOCALAPPDATA 'NeonShard'
 $runtimeRoot = Join-Path $dataRoot "runtime\$version"
 $godot = Join-Path $runtimeRoot "Godot_v$version-stable_win64.exe"
+$godotConsole = Join-Path $runtimeRoot "Godot_v$version-stable_win64_console.exe"
 $server = $null
 
 try {
     if (-not [Environment]::Is64BitOperatingSystem) {
         throw 'This launcher requires 64-bit Windows.'
     }
-    if (-not (Test-Path -LiteralPath $godot)) {
+    if (-not (Test-Path -LiteralPath $godot) -or -not (Test-Path -LiteralPath $godotConsole)) {
         Write-Host "Downloading Godot $version from its official release (first run only)..."
         New-Item -ItemType Directory -Force -Path $runtimeRoot | Out-Null
         $archive = Join-Path $runtimeRoot $archiveName
@@ -26,10 +27,10 @@ try {
         }
         Expand-Archive -LiteralPath $archive -DestinationPath $runtimeRoot -Force
         Remove-Item -LiteralPath $archive -Force
-        if (-not (Test-Path -LiteralPath $godot)) { throw 'Godot runtime was not extracted correctly.' }
+        if (-not (Test-Path -LiteralPath $godot) -or -not (Test-Path -LiteralPath $godotConsole)) { throw 'Godot runtime was not extracted correctly.' }
     }
     Write-Host 'Preparing game assets...'
-    & $godot --headless --path $projectRoot --editor --import --quit
+    & $godotConsole --headless --path $projectRoot --editor --import --quit
     if ($LASTEXITCODE -ne 0) { throw 'Godot could not import the project.' }
 
     $session = Join-Path $dataRoot ('logs\' + [Guid]::NewGuid().ToString('N'))
