@@ -1,5 +1,6 @@
 extends RefCounted
 ## A continuous cutaway interior. Floor registration is shared with the server.
+const CharacterRig = preload("res://scripts/character_rig.gd")
 const SpriteAnimation = preload("res://scripts/character_animation.gd")
 const Roles = preload("res://scripts/archetypes.gd")
 const Zones = preload("res://scripts/zones.gd")
@@ -21,7 +22,12 @@ var zone := "concourse"
 var transition_clock := 0.0
 var transitions_enabled := true
 var animation = SpriteAnimation.new()
+var rig = CharacterRig.new()
 var animation_textures: Dictionary = {}
+var ronin_body := Rect2(300, 0, 560, 793)
+var ronin_weapon := Rect2(1160, 110, 700, 630)
+var ronin_hand := Vector2(418, 425)
+var ronin_grip := Vector2(1260, 190)
 var animation_delta := 0.0
 var props: Texture2D
 var offset := Vector2.ZERO
@@ -38,6 +44,14 @@ func _init() -> void:
 	props = load("res://assets/city/props-atlas.png")
 	for id in Roles.ORDER:
 		animation_textures[id] = load("res://assets/animations/" + id + ".png")
+	animation_textures["ronin"] = load("res://assets/animations/ronin-layered.png")
+	var layered_size: Vector2 = animation_textures["ronin"].get_size()
+	var art_scale := layered_size / Vector2(1983, 793)
+	ronin_body = Rect2(ronin_body.position * art_scale, ronin_body.size * art_scale)
+	ronin_weapon = Rect2(ronin_weapon.position * art_scale, ronin_weapon.size * art_scale)
+	ronin_hand *= art_scale
+	ronin_grip *= art_scale
+	rig.bind_skin("ronin", ronin_body, layered_size)
 
 func screen(point: Vector2) -> Vector2:
 	return offset + Layout.art_position(point)
@@ -60,12 +74,14 @@ func render(node: Node2D, players: Array, drones: Array, local_id: int, seconds:
 		room = room_cache[zone]
 		smooth_positions.clear()
 		animation.clear()
+		rig.clear()
 		transition_clock = 0.25 if transitions_enabled else 0.0
 	transition_clock = maxf(0, transition_clock - delta)
 	var player_ids: Array = []
 	for player in players:
 		player_ids.append(int(player.id))
 	animation.retain(player_ids)
+	rig.retain(player_ids)
 	players = players.duplicate(true)
 	drones = drones.duplicate(true)
 	var keys: Array = []
@@ -138,15 +154,12 @@ func draw_player(player: Dictionary, local_id: int) -> void:
 	var style := Roles.stats(player.archetype)
 	var pose: Dictionary = animation.sample(player, animation_delta)
 	var texture: Texture2D = animation_textures[player.archetype]
-	var source: Rect2 = SpriteAnimation.region(texture.get_size(), pose)
-	# All frames use a common cell/foot anchor; no frame-by-frame recentering jitter.
-	var dimensions := source.size / source.size.y * CHARACTER_HEIGHT
-	var cell_size := texture.get_size() / Vector2(SpriteAnimation.COLUMNS, SpriteAnimation.ROWS)
-	var cell_origin := Vector2(pose.frame, pose.row) * cell_size
-	var origin := Vector2(-CHARACTER_HEIGHT * 0.5, -CHARACTER_HEIGHT + 3) + (source.position - cell_origin) / cell_size.y * CHARACTER_HEIGHT
 	draw_shadow(p, 13 * CHARACTER_SCALE)
 	canvas.draw_set_transform(p, 0, Vector2(-1 if pose.mirror else 1, 1))
-	canvas.draw_texture_rect_region(texture, Rect2(origin, dimensions), source, Color("e0ece4"), false, true)
+	canvas.draw_mesh(rig.mesh_for(int(player.id), pose, CHARACTER_HEIGHT), texture, Transform2D.IDENTITY, Color("e0ece4"))
+	if player.archetype == "ronin":
+		draw_ronin_weapon(pose, texture, p)
+	draw_attack_feedback(pose, style.color)
 	canvas.draw_set_transform(Vector2.ZERO, 0, Vector2.ONE)
 	if int(player.id) == local_id:
 		canvas.draw_arc(p, 16 * CHARACTER_SCALE, 0, TAU, 28, Color(style.color, 0.65), 1, true)
@@ -202,3 +215,37 @@ func draw_door() -> void:
 	canvas.draw_arc(Vector2.ZERO, 22, 0, TAU, 28, Color(CYAN, 0.5), 1, true)
 	canvas.draw_set_transform(Vector2.ZERO, 0, Vector2.ONE)
 	canvas.draw_string(font, p + Vector2(-65, 22), Zones.info(zone).link_name + " / E", HORIZONTAL_ALIGNMENT_LEFT, -1, 10, CYAN)
+
+func draw_ronin_weapon(pose: Dictionary, texture: Texture2D, screen_origin: Vector2) -> void:
+	var point := (ronin_hand - ronin_body.position) / ronin_body.size
+	var deformed: Vector2 = rig.vertex(point, pose)
+	deformed.x += (point.x - 0.5) * (ronin_body.size.x / ronin_body.size.y - 1)
+	var hand := (deformed - Vector2(0.5, 1.0)) * CHARACTER_HEIGHT + Vector2(0, 3)
+	var scale := CHARACTER_HEIGHT / ronin_body.size.y * 0.65
+	var angle := 0.0
+	if pose.attacking:
+		# One continuous wrist arc; the whole blade remains a rigid layer.
+		angle = -sin(clampf(float(pose.attack_t), 0, 1) * PI) * 1.75
+	var mirror := -1.0 if pose.mirror else 1.0
+	canvas.draw_set_transform_matrix(Transform2D(0, Vector2(mirror, 1), 0, screen_origin) * Transform2D(angle, hand))
+	canvas.draw_texture_rect_region(texture, Rect2(-(ronin_grip - ronin_weapon.position) * scale, ronin_weapon.size * scale), ronin_weapon, Color("e0ece4"), false, true)
+	canvas.draw_set_transform(screen_origin, 0, Vector2(mirror, 1))
+
+func draw_attack_feedback(pose: Dictionary, color: Color) -> void:
+	if not pose.attacking:
+		return
+	var t := clampf(float(pose.attack_t), 0, 1)
+	var alpha := pow(1 - t, 3)
+	match pose.archetype:
+		"cipher", "machinist":
+			var hand := Vector2(32, -103) if pose.archetype == "cipher" else Vector2(32, -95)
+			canvas.draw_arc(hand, 7 + t * 22, -PI * 0.8, PI * 0.8, 32, Color(color, alpha * 0.8), 1.5, true)
+			canvas.draw_circle(hand, 3 + alpha * 3, Color(color, alpha * 0.7))
+		"vanguard", "ghost":
+			var muzzle := Vector2(56, -62) if pose.archetype == "vanguard" else Vector2(50, -62)
+			muzzle.x -= float(pose.recoil) * CHARACTER_HEIGHT * 0.65
+			canvas.draw_line(muzzle, muzzle + Vector2(12 + alpha * 12, 1), Color(color, alpha), 2, true)
+			canvas.draw_circle(muzzle, 2 + alpha * 3, Color(color, alpha * 0.85))
+		"ronin":
+			var angle := lerpf(-1.5, 1.0, smoothstep(0, 1, t))
+			canvas.draw_arc(Vector2(14, -63), 43, angle - 0.5, angle, 24, Color(color, sin(t * PI) * 0.65), 2, true)

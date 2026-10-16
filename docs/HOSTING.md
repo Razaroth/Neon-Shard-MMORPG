@@ -46,3 +46,5 @@ The concourse and maintenance bay are connected by marked doorways (approach and
 ## Animation and movement protocol
 
 Use the same updated source on clients and server: movement RPCs now carry a run intent, and snapshots include actual velocity, moving/running state, facing and server attack serial/age. Existing class speeds are run speeds; walking uses 65% of those values. Character save format and progression remain compatible. The Windows local launcher starts both from the same checkout.
+
+Movement now accelerates and brakes on the server. Keep clients and servers on the same revision; stale-input timeout and collision remain server-enforced. The continuous animation rig is client-side and does not change saved character data.

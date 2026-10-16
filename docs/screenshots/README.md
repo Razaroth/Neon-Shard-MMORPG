@@ -10,9 +10,9 @@ Characters are now **another 20% larger** (164.4 pixels tall), with matching foo
 
 ![Five-class animation playback](animations.gif)
 
-[Open animated GIF](animations.gif) · [Download MP4](animations.mp4)
+[Open animated GIF](animations.gif) · [Download MP4](animations.mp4) · [Previous six-pose version](https://raw.githubusercontent.com/Razaroth/Neon-Shard-MMORPG/79743d6/docs/screenshots/animations.gif)
 
-Staged Godot playback shows all five classes cycling through idle, walk, run, attack and mirrored left-facing run. In the game, use WASD to walk, hold Shift to run, and hold Space to attack. This first pass uses six frames per clip and two mirrored facings; full eight-direction views and hit/death animations remain future work.
+Staged Godot playback now uses actual moving actors and continuous 2D mesh motion: breathing, strides, walk/run blending, stopping, class-specific attacks and reversing direction. It replaces the uneven six-pose playback with stable class skins. Use WASD to walk, hold Shift to run, and hold Space to attack. This improves timing and consistency; it is not AAA release-quality animation. Full directional skeletal artwork, foot IK, hit/death reactions and further rig polish remain future work.
 
 ## Maintenance Bay
 

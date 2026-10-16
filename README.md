@@ -40,7 +40,7 @@ Set `GODOT_BIN` if your executable has another name. See [hosting instructions](
 
 ## Characters and persistence
 
-Vanguard, Cipher, Ronin, Ghost and Machinist have distinct server-enforced combat stats, portraits and animated in-game sprites. Each class has six-frame idle, walk, run and attack clips, with mirrored left/right facing. Attack animations follow server-confirmed attempts; they cannot change damage or cooldowns. This is the first animation pass: full eight-direction turns, hit reactions and death clips remain future work. Each client identity has five independent slots per server. Existing slots restore their saved class; an unused slot lets you try a different class. Separate identities can be selected with `--identity-file /absolute/path/identity.cfg`.
+Vanguard, Cipher, Ronin, Ghost and Machinist have distinct server-enforced combat stats, portraits and animated in-game sprites. Each class uses a stable 2D skin with continuous mesh-based breathing, strides, coat follow-through and class-specific attack feedback. Movement accelerates and brakes smoothly; walk/run transitions retain gait phase and stride follows actual distance. Mirrored left/right facing eases through turns. Attack motion follows server-confirmed attempts and cannot change damage or cooldowns. This is a procedural 2D motion pass, not release-quality authored skeletal animation: full eight-direction turns, hit reactions, death clips and further rig polish remain future work. Each client identity has five independent slots per server. Existing slots restore their saved class; an unused slot lets you try a different class. Separate identities can be selected with `--identity-file /absolute/path/identity.cfg`.
 
 The server saves class, room, health, position, scrap, credits and contract progress every five seconds, on observed disconnect, and on acknowledged leave. Travel and contract turn-in save immediately. Defeat returns you to a safe arrival point in your current room with full health; resources and progress are retained. Old positions outside the new room are moved onto a valid floor location without resetting the character. Older records with no class become Ronin in slot 1.
 
@@ -60,7 +60,7 @@ python3 tests/multiplayer_smoke.py
 
 The rules check combat range/cadence, duplicate rewards, respawn, classes, room collision, pursuit around columns, sightlines and camera bounds. The real ENet integration test runs two clients, verifies movement and saves, completes the contract, restarts the server and checks character slots and progression. It also walks through both doorways, checks room isolation, fights in the maintenance bay, and verifies saved room, health and loot after a server restart. It uses isolated temporary data and cleans up its own processes. Local sockets must be permitted by the execution sandbox.
 
-[Interior screenshots](docs/screenshots/README.md) show staged Godot renders rather than live multiplayer. [Art and geometry notes](docs/VISUALS.md) explain the active room and limitations.
+[Animation preview and interior screenshots](docs/screenshots/README.md) show staged Godot renders rather than live multiplayer. [Art and geometry notes](docs/VISUALS.md) explain the active room and limitations.
 
 ## Scope and next milestones
 
