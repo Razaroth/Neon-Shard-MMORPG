@@ -8,7 +8,7 @@ func _initialize() -> void:
 	call_deferred("capture")
 
 func capture() -> void:
-	var output := "/tmp/neon-articulated-captures"
+	var output := "/tmp/neon-classic-captures"
 	var args := OS.get_cmdline_user_args()
 	if args.has("--capture-dir"):
 		output = args[args.find("--capture-dir") + 1]
@@ -43,7 +43,7 @@ func capture() -> void:
 		if tick >= 143 and tick < 188: clip = "attack"
 		if tick >= 188 and tick < 225: clip = "walk"
 		world.elapsed = tick / 30.0
-		world.hud.text = "MOTION REFINEMENT\n" + clip.to_upper() + "\n\nContinuous 2D mesh motion\nStaged Godot playback"
+		world.hud.text = "MOTION REFINEMENT\n" + clip.to_upper() + "\n\nClassic frame-based sprites\nStaged Godot playback"
 		for actor in world.state:
 			actor.input = Vector2(-1, 1).normalized() if tick < 188 else Vector2(1, -1).normalized()
 			if clip not in ["walk", "run"]:
@@ -65,6 +65,5 @@ func capture() -> void:
 	for clip in ["idle", "walk", "run", "attack"]:
 		assert(observed.has(clip), "Preview must render every animation state")
 	assert(saved_frames == capture_end - capture_start)
-	print("MESH_BUILD_US_PER_ACTOR ", float(world.visuals.rig.build_usec) / maxf(1, world.visuals.rig.build_count))
 	print("ANIMATION_CAPTURE_OK ", output)
 	quit()

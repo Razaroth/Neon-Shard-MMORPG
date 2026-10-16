@@ -1,4 +1,4 @@
-# Neon Shard · Connected interiors
+# Neon Shard · Classic sprite movement study
 
 The active areas are **Kairo Exchange and its connected Maintenance Bay**, with characters walking inside connected architecture. It replaces the repeated full-building layout with an authored floor, surrounding walls, recessed counters, structural columns, and foreground railings.
 
@@ -12,9 +12,11 @@ Characters are now **another 20% larger** (164.4 pixels tall), with matching foo
 
 [Open animated GIF](animations.gif) · [Download MP4](animations.mp4) · [Previous six-pose version](https://raw.githubusercontent.com/Razaroth/Neon-Shard-MMORPG/79743d6/docs/screenshots/animations.gif)
 
-Staged Godot playback now uses actual moving actors and continuous 2D mesh motion: breathing, strides, walk/run blending, stopping, class-specific attacks and reversing direction. It uses stable class skins, articulated knee joints, world-space foot contacts, shoulder counter-swing and a controlled sword strike/recovery. Use WASD to walk, hold Shift to run, and hold Space to attack. This improves timing and consistency; it is not AAA release-quality animation. Full directional skeletal artwork, foot IK, hit/death reactions and further rig polish remain future work.
+This is a new **classic pixel-art RPG movement study**: complete sprite frames replace the rejected bending/warping approach. It uses clear contact/passing poses, eight-frame strides, separate walking/running, four individually drawn directions, and class-specific attacks.
 
-[Previous mesh-motion pass](https://raw.githubusercontent.com/Razaroth/Neon-Shard-MMORPG/cb5cc40/docs/screenshots/animations.gif)
+The credited LPC sprites use artist-authored movement and reference outfits; final cyberpunk class artwork is still needed. The painted city and portraits remain; the main branch is unchanged. [Download this playable preview](https://github.com/Razaroth/Neon-Shard-MMORPG/archive/refs/heads/classic-sprite-preview.zip), extract it, and run `Play-Windows.cmd`.
+
+[Previous rejected mesh version](https://raw.githubusercontent.com/Razaroth/Neon-Shard-MMORPG/6256d0a/docs/screenshots/animations.gif)
 
 ## Maintenance Bay
 
@@ -70,4 +72,4 @@ These are two connected playable interiors, using original generated room painti
 
 Room collision, navigation around columns, enemy pursuit, blocked attacks, old-save relocation and camera bounds passed their checks. The real two-client integration test also passed movement, combat, mission rewards, character-slot persistence and server restart restoration, doorway travel, room isolation, maintenance combat, and return travel. Room, health and loot survived a server restart.
 
-The screenshots are not a hardware performance benchmark. The complete playable project and Windows launcher are published on the repository’s main branch. See the root README for play instructions.
+The screenshots are not a hardware performance benchmark. This branch includes the complete playable project and Windows launcher. See its root README for preview play instructions.

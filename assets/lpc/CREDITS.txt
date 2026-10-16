@@ -1,0 +1,491 @@
+LIBERATED PIXEL CUP / CLASSIC MOVEMENT STUDY
+
+Artist-authored body, head, clothing, hair and boot animation layers.
+Source: https://github.com/LiberatedPixelCup/Universal-LPC-Spritesheet-Character-Generator
+Revision: 9bf06be193b053db256b2536824af426de046aa2
+
+Selected license for every bundled LPC layer: OGA-BY 3.0.
+License: https://static.opengameart.org/OGA-BY-3.0.txt
+Authors: Benjamin K. Smith (BenCreating), Durrani, Eliza Wyatt (ElizaWy), ElizaWy, Evert, JaidynReiman, Joe White, Johannes Sjölund (wulax), Manuel Riecke (MrBeast), Matthew Krohn (makrohn), MuffinElZangano, Nila122, Pierre Vigier (pvigier), Stephen Challener (Redshrike), TheraHedwig, bluecarrot16
+
+The upstream PNGs are unmodified. The game applies runtime color tints.
+These reference outfits are not finished Neon Shard cyberpunk character art.
+Other upstream license choices remain recorded in manifest.json.
+
+PER-ASSET ATTRIBUTION AND ORIGINAL SOURCES
+
+body/bodies/female/run.png
+Authors: Benjamin K. Smith (BenCreating),bluecarrot16,TheraHedwig,Evert,MuffinElZangano,Durrani,Pierre Vigier (pvigier),ElizaWy,Matthew Krohn (makrohn),Johannes Sjölund (wulax),Stephen Challener (Redshrike)
+Sources: https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles,https://opengameart.org/content/lpc-medieval-fantasy-character-sprites,https://opengameart.org/content/lpc-ladies,https://opengameart.org/content/lpc-7-womens-shirts,https://opengameart.org/content/lpc-jump-expanded,https://opengameart.org/content/lpc-be-seated,https://opengameart.org/content/lpc-revised-character-basics,https://gitlab.com/vagabondgame/lpc-characters,https://opengameart.org/content/lpc-male-jumping-animation-by-durrani,https://opengameart.org/content/lpc-runcycle-and-diagonal-walkcycle
+Notes: see details at https://opengameart.org/content/lpc-character-bases
+
+body/bodies/female/shoot.png
+Authors: Benjamin K. Smith (BenCreating),bluecarrot16,TheraHedwig,Evert,MuffinElZangano,Durrani,Pierre Vigier (pvigier),ElizaWy,Matthew Krohn (makrohn),Johannes Sjölund (wulax),Stephen Challener (Redshrike)
+Sources: https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles,https://opengameart.org/content/lpc-medieval-fantasy-character-sprites,https://opengameart.org/content/lpc-ladies,https://opengameart.org/content/lpc-7-womens-shirts,https://opengameart.org/content/lpc-jump-expanded,https://opengameart.org/content/lpc-be-seated,https://opengameart.org/content/lpc-revised-character-basics,https://gitlab.com/vagabondgame/lpc-characters,https://opengameart.org/content/lpc-male-jumping-animation-by-durrani,https://opengameart.org/content/lpc-runcycle-and-diagonal-walkcycle
+Notes: see details at https://opengameart.org/content/lpc-character-bases
+
+body/bodies/female/slash.png
+Authors: Benjamin K. Smith (BenCreating),bluecarrot16,TheraHedwig,Evert,MuffinElZangano,Durrani,Pierre Vigier (pvigier),ElizaWy,Matthew Krohn (makrohn),Johannes Sjölund (wulax),Stephen Challener (Redshrike)
+Sources: https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles,https://opengameart.org/content/lpc-medieval-fantasy-character-sprites,https://opengameart.org/content/lpc-ladies,https://opengameart.org/content/lpc-7-womens-shirts,https://opengameart.org/content/lpc-jump-expanded,https://opengameart.org/content/lpc-be-seated,https://opengameart.org/content/lpc-revised-character-basics,https://gitlab.com/vagabondgame/lpc-characters,https://opengameart.org/content/lpc-male-jumping-animation-by-durrani,https://opengameart.org/content/lpc-runcycle-and-diagonal-walkcycle
+Notes: see details at https://opengameart.org/content/lpc-character-bases
+
+body/bodies/female/spellcast.png
+Authors: Benjamin K. Smith (BenCreating),bluecarrot16,TheraHedwig,Evert,MuffinElZangano,Durrani,Pierre Vigier (pvigier),ElizaWy,Matthew Krohn (makrohn),Johannes Sjölund (wulax),Stephen Challener (Redshrike)
+Sources: https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles,https://opengameart.org/content/lpc-medieval-fantasy-character-sprites,https://opengameart.org/content/lpc-ladies,https://opengameart.org/content/lpc-7-womens-shirts,https://opengameart.org/content/lpc-jump-expanded,https://opengameart.org/content/lpc-be-seated,https://opengameart.org/content/lpc-revised-character-basics,https://gitlab.com/vagabondgame/lpc-characters,https://opengameart.org/content/lpc-male-jumping-animation-by-durrani,https://opengameart.org/content/lpc-runcycle-and-diagonal-walkcycle
+Notes: see details at https://opengameart.org/content/lpc-character-bases
+
+body/bodies/female/walk.png
+Authors: Benjamin K. Smith (BenCreating),bluecarrot16,TheraHedwig,Evert,MuffinElZangano,Durrani,Pierre Vigier (pvigier),ElizaWy,Matthew Krohn (makrohn),Johannes Sjölund (wulax),Stephen Challener (Redshrike)
+Sources: https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles,https://opengameart.org/content/lpc-medieval-fantasy-character-sprites,https://opengameart.org/content/lpc-ladies,https://opengameart.org/content/lpc-7-womens-shirts,https://opengameart.org/content/lpc-jump-expanded,https://opengameart.org/content/lpc-be-seated,https://opengameart.org/content/lpc-revised-character-basics,https://gitlab.com/vagabondgame/lpc-characters,https://opengameart.org/content/lpc-male-jumping-animation-by-durrani,https://opengameart.org/content/lpc-runcycle-and-diagonal-walkcycle
+Notes: see details at https://opengameart.org/content/lpc-character-bases
+
+body/bodies/male/run.png
+Authors: bluecarrot16,JaidynReiman,Benjamin K. Smith (BenCreating),Evert,Eliza Wyatt (ElizaWy),TheraHedwig,MuffinElZangano,Durrani,Johannes Sjölund (wulax),Stephen Challener (Redshrike)
+Sources: https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles,https://opengameart.org/content/lpc-medieval-fantasy-character-sprites,https://opengameart.org/content/lpc-male-jumping-animation-by-durrani,https://opengameart.org/content/lpc-runcycle-and-diagonal-walkcycle,https://opengameart.org/content/lpc-revised-character-basics,https://opengameart.org/content/lpc-be-seated,https://opengameart.org/content/lpc-runcycle-for-male-muscular-and-pregnant-character-bases-with-modular-heads,https://opengameart.org/content/lpc-jump-expanded,https://opengameart.org/content/lpc-character-bases
+Notes: see details at https://opengameart.org/content/lpc-character-bases; 'Thick' Male Revised Run/Climb by JaidynReiman (based on ElizaWy's LPC Revised)
+
+body/bodies/male/shoot.png
+Authors: bluecarrot16,JaidynReiman,Benjamin K. Smith (BenCreating),Evert,Eliza Wyatt (ElizaWy),TheraHedwig,MuffinElZangano,Durrani,Johannes Sjölund (wulax),Stephen Challener (Redshrike)
+Sources: https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles,https://opengameart.org/content/lpc-medieval-fantasy-character-sprites,https://opengameart.org/content/lpc-male-jumping-animation-by-durrani,https://opengameart.org/content/lpc-runcycle-and-diagonal-walkcycle,https://opengameart.org/content/lpc-revised-character-basics,https://opengameart.org/content/lpc-be-seated,https://opengameart.org/content/lpc-runcycle-for-male-muscular-and-pregnant-character-bases-with-modular-heads,https://opengameart.org/content/lpc-jump-expanded,https://opengameart.org/content/lpc-character-bases
+Notes: see details at https://opengameart.org/content/lpc-character-bases; 'Thick' Male Revised Run/Climb by JaidynReiman (based on ElizaWy's LPC Revised)
+
+body/bodies/male/slash.png
+Authors: bluecarrot16,JaidynReiman,Benjamin K. Smith (BenCreating),Evert,Eliza Wyatt (ElizaWy),TheraHedwig,MuffinElZangano,Durrani,Johannes Sjölund (wulax),Stephen Challener (Redshrike)
+Sources: https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles,https://opengameart.org/content/lpc-medieval-fantasy-character-sprites,https://opengameart.org/content/lpc-male-jumping-animation-by-durrani,https://opengameart.org/content/lpc-runcycle-and-diagonal-walkcycle,https://opengameart.org/content/lpc-revised-character-basics,https://opengameart.org/content/lpc-be-seated,https://opengameart.org/content/lpc-runcycle-for-male-muscular-and-pregnant-character-bases-with-modular-heads,https://opengameart.org/content/lpc-jump-expanded,https://opengameart.org/content/lpc-character-bases
+Notes: see details at https://opengameart.org/content/lpc-character-bases; 'Thick' Male Revised Run/Climb by JaidynReiman (based on ElizaWy's LPC Revised)
+
+body/bodies/male/spellcast.png
+Authors: bluecarrot16,JaidynReiman,Benjamin K. Smith (BenCreating),Evert,Eliza Wyatt (ElizaWy),TheraHedwig,MuffinElZangano,Durrani,Johannes Sjölund (wulax),Stephen Challener (Redshrike)
+Sources: https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles,https://opengameart.org/content/lpc-medieval-fantasy-character-sprites,https://opengameart.org/content/lpc-male-jumping-animation-by-durrani,https://opengameart.org/content/lpc-runcycle-and-diagonal-walkcycle,https://opengameart.org/content/lpc-revised-character-basics,https://opengameart.org/content/lpc-be-seated,https://opengameart.org/content/lpc-runcycle-for-male-muscular-and-pregnant-character-bases-with-modular-heads,https://opengameart.org/content/lpc-jump-expanded,https://opengameart.org/content/lpc-character-bases
+Notes: see details at https://opengameart.org/content/lpc-character-bases; 'Thick' Male Revised Run/Climb by JaidynReiman (based on ElizaWy's LPC Revised)
+
+body/bodies/male/walk.png
+Authors: bluecarrot16,JaidynReiman,Benjamin K. Smith (BenCreating),Evert,Eliza Wyatt (ElizaWy),TheraHedwig,MuffinElZangano,Durrani,Johannes Sjölund (wulax),Stephen Challener (Redshrike)
+Sources: https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles,https://opengameart.org/content/lpc-medieval-fantasy-character-sprites,https://opengameart.org/content/lpc-male-jumping-animation-by-durrani,https://opengameart.org/content/lpc-runcycle-and-diagonal-walkcycle,https://opengameart.org/content/lpc-revised-character-basics,https://opengameart.org/content/lpc-be-seated,https://opengameart.org/content/lpc-runcycle-for-male-muscular-and-pregnant-character-bases-with-modular-heads,https://opengameart.org/content/lpc-jump-expanded,https://opengameart.org/content/lpc-character-bases
+Notes: see details at https://opengameart.org/content/lpc-character-bases; 'Thick' Male Revised Run/Climb by JaidynReiman (based on ElizaWy's LPC Revised)
+
+feet/boots/basic/male/run.png
+Authors: JaidynReiman,bluecarrot16,Nila122
+Sources: https://opengameart.org/content/lpc-clothes-and-hair,https://opengameart.org/content/lpc-expanded-socks-shoes
+Notes: original by Nila122, edited for male and v3 bases by bluecarrot16, Jump/Sit/Emote/Run/Revised Combat by JaidynReiman
+
+feet/boots/basic/male/shoot.png
+Authors: JaidynReiman,bluecarrot16,Nila122
+Sources: https://opengameart.org/content/lpc-clothes-and-hair,https://opengameart.org/content/lpc-expanded-socks-shoes
+Notes: original by Nila122, edited for male and v3 bases by bluecarrot16, Jump/Sit/Emote/Run/Revised Combat by JaidynReiman
+
+feet/boots/basic/male/slash.png
+Authors: JaidynReiman,bluecarrot16,Nila122
+Sources: https://opengameart.org/content/lpc-clothes-and-hair,https://opengameart.org/content/lpc-expanded-socks-shoes
+Notes: original by Nila122, edited for male and v3 bases by bluecarrot16, Jump/Sit/Emote/Run/Revised Combat by JaidynReiman
+
+feet/boots/basic/male/spellcast.png
+Authors: JaidynReiman,bluecarrot16,Nila122
+Sources: https://opengameart.org/content/lpc-clothes-and-hair,https://opengameart.org/content/lpc-expanded-socks-shoes
+Notes: original by Nila122, edited for male and v3 bases by bluecarrot16, Jump/Sit/Emote/Run/Revised Combat by JaidynReiman
+
+feet/boots/basic/male/walk.png
+Authors: JaidynReiman,bluecarrot16,Nila122
+Sources: https://opengameart.org/content/lpc-clothes-and-hair,https://opengameart.org/content/lpc-expanded-socks-shoes
+Notes: original by Nila122, edited for male and v3 bases by bluecarrot16, Jump/Sit/Emote/Run/Revised Combat by JaidynReiman
+
+feet/boots/basic/thin/run.png
+Authors: JaidynReiman,bluecarrot16,Nila122
+Sources: https://opengameart.org/content/lpc-clothes-and-hair,https://opengameart.org/content/lpc-expanded-socks-shoes
+Notes: original by Nila122, edited for v3 bases by bluecarrot16, Jump/Sit/Emote/Run/Revised Combat by JaidynReiman
+
+feet/boots/basic/thin/shoot.png
+Authors: JaidynReiman,bluecarrot16,Nila122
+Sources: https://opengameart.org/content/lpc-clothes-and-hair,https://opengameart.org/content/lpc-expanded-socks-shoes
+Notes: original by Nila122, edited for v3 bases by bluecarrot16, Jump/Sit/Emote/Run/Revised Combat by JaidynReiman
+
+feet/boots/basic/thin/slash.png
+Authors: JaidynReiman,bluecarrot16,Nila122
+Sources: https://opengameart.org/content/lpc-clothes-and-hair,https://opengameart.org/content/lpc-expanded-socks-shoes
+Notes: original by Nila122, edited for v3 bases by bluecarrot16, Jump/Sit/Emote/Run/Revised Combat by JaidynReiman
+
+feet/boots/basic/thin/spellcast.png
+Authors: JaidynReiman,bluecarrot16,Nila122
+Sources: https://opengameart.org/content/lpc-clothes-and-hair,https://opengameart.org/content/lpc-expanded-socks-shoes
+Notes: original by Nila122, edited for v3 bases by bluecarrot16, Jump/Sit/Emote/Run/Revised Combat by JaidynReiman
+
+feet/boots/basic/thin/walk.png
+Authors: JaidynReiman,bluecarrot16,Nila122
+Sources: https://opengameart.org/content/lpc-clothes-and-hair,https://opengameart.org/content/lpc-expanded-socks-shoes
+Notes: original by Nila122, edited for v3 bases by bluecarrot16, Jump/Sit/Emote/Run/Revised Combat by JaidynReiman
+
+hair/half_up/adult/run.png
+Authors: ElizaWy
+Sources: https://opengameart.org/content/lpc-hair
+Notes: 
+
+hair/half_up/adult/shoot.png
+Authors: ElizaWy
+Sources: https://opengameart.org/content/lpc-hair
+Notes: 
+
+hair/half_up/adult/slash.png
+Authors: ElizaWy
+Sources: https://opengameart.org/content/lpc-hair
+Notes: 
+
+hair/half_up/adult/spellcast.png
+Authors: ElizaWy
+Sources: https://opengameart.org/content/lpc-hair
+Notes: 
+
+hair/half_up/adult/walk.png
+Authors: ElizaWy
+Sources: https://opengameart.org/content/lpc-hair
+Notes: 
+
+hair/halfmessy/adult/run.png
+Authors: Nila122,bluecarrot16
+Sources: https://opengameart.org/content/more-lpc-clothes-and-hair,https://opengameart.org/content/lpc-hair
+Notes: 
+
+hair/halfmessy/adult/shoot.png
+Authors: Nila122,bluecarrot16
+Sources: https://opengameart.org/content/more-lpc-clothes-and-hair,https://opengameart.org/content/lpc-hair
+Notes: 
+
+hair/halfmessy/adult/slash.png
+Authors: Nila122,bluecarrot16
+Sources: https://opengameart.org/content/more-lpc-clothes-and-hair,https://opengameart.org/content/lpc-hair
+Notes: 
+
+hair/halfmessy/adult/spellcast.png
+Authors: Nila122,bluecarrot16
+Sources: https://opengameart.org/content/more-lpc-clothes-and-hair,https://opengameart.org/content/lpc-hair
+Notes: 
+
+hair/halfmessy/adult/walk.png
+Authors: Nila122,bluecarrot16
+Sources: https://opengameart.org/content/more-lpc-clothes-and-hair,https://opengameart.org/content/lpc-hair
+Notes: 
+
+hair/high_ponytail/adult/bg/run.png
+Authors: JaidynReiman,ElizaWy,bluecarrot16
+Sources: https://opengameart.org/content/lpc-hair,https://opengameart.org/content/lpc-expanded-hair
+Notes: 
+
+hair/high_ponytail/adult/bg/shoot.png
+Authors: JaidynReiman,ElizaWy,bluecarrot16
+Sources: https://opengameart.org/content/lpc-hair,https://opengameart.org/content/lpc-expanded-hair
+Notes: 
+
+hair/high_ponytail/adult/bg/slash.png
+Authors: JaidynReiman,ElizaWy,bluecarrot16
+Sources: https://opengameart.org/content/lpc-hair,https://opengameart.org/content/lpc-expanded-hair
+Notes: 
+
+hair/high_ponytail/adult/bg/spellcast.png
+Authors: JaidynReiman,ElizaWy,bluecarrot16
+Sources: https://opengameart.org/content/lpc-hair,https://opengameart.org/content/lpc-expanded-hair
+Notes: 
+
+hair/high_ponytail/adult/bg/walk.png
+Authors: JaidynReiman,ElizaWy,bluecarrot16
+Sources: https://opengameart.org/content/lpc-hair,https://opengameart.org/content/lpc-expanded-hair
+Notes: 
+
+hair/high_ponytail/adult/fg/run.png
+Authors: JaidynReiman,ElizaWy,bluecarrot16
+Sources: https://opengameart.org/content/lpc-hair,https://opengameart.org/content/lpc-expanded-hair
+Notes: 
+
+hair/high_ponytail/adult/fg/shoot.png
+Authors: JaidynReiman,ElizaWy,bluecarrot16
+Sources: https://opengameart.org/content/lpc-hair,https://opengameart.org/content/lpc-expanded-hair
+Notes: 
+
+hair/high_ponytail/adult/fg/slash.png
+Authors: JaidynReiman,ElizaWy,bluecarrot16
+Sources: https://opengameart.org/content/lpc-hair,https://opengameart.org/content/lpc-expanded-hair
+Notes: 
+
+hair/high_ponytail/adult/fg/spellcast.png
+Authors: JaidynReiman,ElizaWy,bluecarrot16
+Sources: https://opengameart.org/content/lpc-hair,https://opengameart.org/content/lpc-expanded-hair
+Notes: 
+
+hair/high_ponytail/adult/fg/walk.png
+Authors: JaidynReiman,ElizaWy,bluecarrot16
+Sources: https://opengameart.org/content/lpc-hair,https://opengameart.org/content/lpc-expanded-hair
+Notes: 
+
+hair/ponytail2/adult/bg/run.png
+Authors: JaidynReiman,Manuel Riecke (MrBeast),Joe White
+Sources: https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles,https://opengameart.org/content/ponytail-and-plain-hairstyles,https://opengameart.org/content/lpc-expanded-hair
+Notes: 
+
+hair/ponytail2/adult/bg/shoot.png
+Authors: JaidynReiman,Manuel Riecke (MrBeast),Joe White
+Sources: https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles,https://opengameart.org/content/ponytail-and-plain-hairstyles,https://opengameart.org/content/lpc-expanded-hair
+Notes: 
+
+hair/ponytail2/adult/bg/slash.png
+Authors: JaidynReiman,Manuel Riecke (MrBeast),Joe White
+Sources: https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles,https://opengameart.org/content/ponytail-and-plain-hairstyles,https://opengameart.org/content/lpc-expanded-hair
+Notes: 
+
+hair/ponytail2/adult/bg/spellcast.png
+Authors: JaidynReiman,Manuel Riecke (MrBeast),Joe White
+Sources: https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles,https://opengameart.org/content/ponytail-and-plain-hairstyles,https://opengameart.org/content/lpc-expanded-hair
+Notes: 
+
+hair/ponytail2/adult/bg/walk.png
+Authors: JaidynReiman,Manuel Riecke (MrBeast),Joe White
+Sources: https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles,https://opengameart.org/content/ponytail-and-plain-hairstyles,https://opengameart.org/content/lpc-expanded-hair
+Notes: 
+
+hair/ponytail2/adult/fg/run.png
+Authors: JaidynReiman,Manuel Riecke (MrBeast),Joe White
+Sources: https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles,https://opengameart.org/content/ponytail-and-plain-hairstyles,https://opengameart.org/content/lpc-expanded-hair
+Notes: 
+
+hair/ponytail2/adult/fg/shoot.png
+Authors: JaidynReiman,Manuel Riecke (MrBeast),Joe White
+Sources: https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles,https://opengameart.org/content/ponytail-and-plain-hairstyles,https://opengameart.org/content/lpc-expanded-hair
+Notes: 
+
+hair/ponytail2/adult/fg/slash.png
+Authors: JaidynReiman,Manuel Riecke (MrBeast),Joe White
+Sources: https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles,https://opengameart.org/content/ponytail-and-plain-hairstyles,https://opengameart.org/content/lpc-expanded-hair
+Notes: 
+
+hair/ponytail2/adult/fg/spellcast.png
+Authors: JaidynReiman,Manuel Riecke (MrBeast),Joe White
+Sources: https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles,https://opengameart.org/content/ponytail-and-plain-hairstyles,https://opengameart.org/content/lpc-expanded-hair
+Notes: 
+
+hair/ponytail2/adult/fg/walk.png
+Authors: JaidynReiman,Manuel Riecke (MrBeast),Joe White
+Sources: https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles,https://opengameart.org/content/ponytail-and-plain-hairstyles,https://opengameart.org/content/lpc-expanded-hair
+Notes: 
+
+hat/cloth/hood/adult/run.png
+Authors: Johannes Sjölund (wulax),JaidynReiman
+Sources: https://opengameart.org/content/lpc-medieval-fantasy-character-sprites,https://opengameart.org/content/lpc-expanded-hats-facial-helmets
+Notes: Brown hood by Wulax, original black/white recolors by ??, mapped to idle/run/jump/revised combat by JaidynReiman, along with additional recolors.
+
+hat/cloth/hood/adult/shoot.png
+Authors: Johannes Sjölund (wulax),JaidynReiman
+Sources: https://opengameart.org/content/lpc-medieval-fantasy-character-sprites,https://opengameart.org/content/lpc-expanded-hats-facial-helmets
+Notes: Brown hood by Wulax, original black/white recolors by ??, mapped to idle/run/jump/revised combat by JaidynReiman, along with additional recolors.
+
+hat/cloth/hood/adult/slash.png
+Authors: Johannes Sjölund (wulax),JaidynReiman
+Sources: https://opengameart.org/content/lpc-medieval-fantasy-character-sprites,https://opengameart.org/content/lpc-expanded-hats-facial-helmets
+Notes: Brown hood by Wulax, original black/white recolors by ??, mapped to idle/run/jump/revised combat by JaidynReiman, along with additional recolors.
+
+hat/cloth/hood/adult/spellcast.png
+Authors: Johannes Sjölund (wulax),JaidynReiman
+Sources: https://opengameart.org/content/lpc-medieval-fantasy-character-sprites,https://opengameart.org/content/lpc-expanded-hats-facial-helmets
+Notes: Brown hood by Wulax, original black/white recolors by ??, mapped to idle/run/jump/revised combat by JaidynReiman, along with additional recolors.
+
+hat/cloth/hood/adult/walk.png
+Authors: Johannes Sjölund (wulax),JaidynReiman
+Sources: https://opengameart.org/content/lpc-medieval-fantasy-character-sprites,https://opengameart.org/content/lpc-expanded-hats-facial-helmets
+Notes: Brown hood by Wulax, original black/white recolors by ??, mapped to idle/run/jump/revised combat by JaidynReiman, along with additional recolors.
+
+head/heads/human/female/run.png
+Authors: bluecarrot16,Benjamin K. Smith (BenCreating),Stephen Challener (Redshrike)
+Sources: https://opengameart.org/content/,https://opengameart.org/content/lpc-character-bases
+Notes: original head by Redshrike, tweaks by BenCreating, modular version by bluecarrot16
+
+head/heads/human/female/shoot.png
+Authors: bluecarrot16,Benjamin K. Smith (BenCreating),Stephen Challener (Redshrike)
+Sources: https://opengameart.org/content/,https://opengameart.org/content/lpc-character-bases
+Notes: original head by Redshrike, tweaks by BenCreating, modular version by bluecarrot16
+
+head/heads/human/female/slash.png
+Authors: bluecarrot16,Benjamin K. Smith (BenCreating),Stephen Challener (Redshrike)
+Sources: https://opengameart.org/content/,https://opengameart.org/content/lpc-character-bases
+Notes: original head by Redshrike, tweaks by BenCreating, modular version by bluecarrot16
+
+head/heads/human/female/spellcast.png
+Authors: bluecarrot16,Benjamin K. Smith (BenCreating),Stephen Challener (Redshrike)
+Sources: https://opengameart.org/content/,https://opengameart.org/content/lpc-character-bases
+Notes: original head by Redshrike, tweaks by BenCreating, modular version by bluecarrot16
+
+head/heads/human/female/walk.png
+Authors: bluecarrot16,Benjamin K. Smith (BenCreating),Stephen Challener (Redshrike)
+Sources: https://opengameart.org/content/,https://opengameart.org/content/lpc-character-bases
+Notes: original head by Redshrike, tweaks by BenCreating, modular version by bluecarrot16
+
+head/heads/human/male/run.png
+Authors: bluecarrot16,Benjamin K. Smith (BenCreating),Stephen Challener (Redshrike)
+Sources: https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles,https://opengameart.org/content/lpc-character-bases
+Notes: original head by Redshrike, tweaks by BenCreating, modular version by bluecarrot16
+
+head/heads/human/male/shoot.png
+Authors: bluecarrot16,Benjamin K. Smith (BenCreating),Stephen Challener (Redshrike)
+Sources: https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles,https://opengameart.org/content/lpc-character-bases
+Notes: original head by Redshrike, tweaks by BenCreating, modular version by bluecarrot16
+
+head/heads/human/male/slash.png
+Authors: bluecarrot16,Benjamin K. Smith (BenCreating),Stephen Challener (Redshrike)
+Sources: https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles,https://opengameart.org/content/lpc-character-bases
+Notes: original head by Redshrike, tweaks by BenCreating, modular version by bluecarrot16
+
+head/heads/human/male/spellcast.png
+Authors: bluecarrot16,Benjamin K. Smith (BenCreating),Stephen Challener (Redshrike)
+Sources: https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles,https://opengameart.org/content/lpc-character-bases
+Notes: original head by Redshrike, tweaks by BenCreating, modular version by bluecarrot16
+
+head/heads/human/male/walk.png
+Authors: bluecarrot16,Benjamin K. Smith (BenCreating),Stephen Challener (Redshrike)
+Sources: https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles,https://opengameart.org/content/lpc-character-bases
+Notes: original head by Redshrike, tweaks by BenCreating, modular version by bluecarrot16
+
+legs/pants/male/run.png
+Authors: bluecarrot16,JaidynReiman,ElizaWy,Matthew Krohn (makrohn),Johannes Sjölund (wulax),Stephen Challener (Redshrike)
+Sources: https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles,https://opengameart.org/content/lpc-medieval-fantasy-character-sprites,https://opengameart.org/content/lpc-expanded-pants
+Notes: original male pants by wulax, recolors and edits to v3 base by bluecarrot16, climb/jump/run/sit/emotes/revised combat by JaidynReiman based on ElizaWy's LPC Revised
+
+legs/pants/male/shoot.png
+Authors: bluecarrot16,JaidynReiman,ElizaWy,Matthew Krohn (makrohn),Johannes Sjölund (wulax),Stephen Challener (Redshrike)
+Sources: https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles,https://opengameart.org/content/lpc-medieval-fantasy-character-sprites,https://opengameart.org/content/lpc-expanded-pants
+Notes: original male pants by wulax, recolors and edits to v3 base by bluecarrot16, climb/jump/run/sit/emotes/revised combat by JaidynReiman based on ElizaWy's LPC Revised
+
+legs/pants/male/slash.png
+Authors: bluecarrot16,JaidynReiman,ElizaWy,Matthew Krohn (makrohn),Johannes Sjölund (wulax),Stephen Challener (Redshrike)
+Sources: https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles,https://opengameart.org/content/lpc-medieval-fantasy-character-sprites,https://opengameart.org/content/lpc-expanded-pants
+Notes: original male pants by wulax, recolors and edits to v3 base by bluecarrot16, climb/jump/run/sit/emotes/revised combat by JaidynReiman based on ElizaWy's LPC Revised
+
+legs/pants/male/spellcast.png
+Authors: bluecarrot16,JaidynReiman,ElizaWy,Matthew Krohn (makrohn),Johannes Sjölund (wulax),Stephen Challener (Redshrike)
+Sources: https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles,https://opengameart.org/content/lpc-medieval-fantasy-character-sprites,https://opengameart.org/content/lpc-expanded-pants
+Notes: original male pants by wulax, recolors and edits to v3 base by bluecarrot16, climb/jump/run/sit/emotes/revised combat by JaidynReiman based on ElizaWy's LPC Revised
+
+legs/pants/male/walk.png
+Authors: bluecarrot16,JaidynReiman,ElizaWy,Matthew Krohn (makrohn),Johannes Sjölund (wulax),Stephen Challener (Redshrike)
+Sources: https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles,https://opengameart.org/content/lpc-medieval-fantasy-character-sprites,https://opengameart.org/content/lpc-expanded-pants
+Notes: original male pants by wulax, recolors and edits to v3 base by bluecarrot16, climb/jump/run/sit/emotes/revised combat by JaidynReiman based on ElizaWy's LPC Revised
+
+legs/pants/thin/run.png
+Authors: bluecarrot16,JaidynReiman,ElizaWy,Joe White,Matthew Krohn (makrohn),Johannes Sjölund (wulax),Stephen Challener (Redshrike)
+Sources: https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles,https://opengameart.org/content/lpc-medieval-fantasy-character-sprites,http://opengameart.org/content/lpc-clothing-updates,https://opengameart.org/content/lpc-expanded-pants
+Notes: original male pants by wulax, edited for female by Joe White, recolors and edits to v3 base by bluecarrot16, teen legs by ElizaWy derived from base, climb/jump/run/sit/emotes/revised combat by JaidynReiman based on ElizaWy's LPC Revised
+
+legs/pants/thin/shoot.png
+Authors: bluecarrot16,JaidynReiman,ElizaWy,Joe White,Matthew Krohn (makrohn),Johannes Sjölund (wulax),Stephen Challener (Redshrike)
+Sources: https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles,https://opengameart.org/content/lpc-medieval-fantasy-character-sprites,http://opengameart.org/content/lpc-clothing-updates,https://opengameart.org/content/lpc-expanded-pants
+Notes: original male pants by wulax, edited for female by Joe White, recolors and edits to v3 base by bluecarrot16, teen legs by ElizaWy derived from base, climb/jump/run/sit/emotes/revised combat by JaidynReiman based on ElizaWy's LPC Revised
+
+legs/pants/thin/slash.png
+Authors: bluecarrot16,JaidynReiman,ElizaWy,Joe White,Matthew Krohn (makrohn),Johannes Sjölund (wulax),Stephen Challener (Redshrike)
+Sources: https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles,https://opengameart.org/content/lpc-medieval-fantasy-character-sprites,http://opengameart.org/content/lpc-clothing-updates,https://opengameart.org/content/lpc-expanded-pants
+Notes: original male pants by wulax, edited for female by Joe White, recolors and edits to v3 base by bluecarrot16, teen legs by ElizaWy derived from base, climb/jump/run/sit/emotes/revised combat by JaidynReiman based on ElizaWy's LPC Revised
+
+legs/pants/thin/spellcast.png
+Authors: bluecarrot16,JaidynReiman,ElizaWy,Joe White,Matthew Krohn (makrohn),Johannes Sjölund (wulax),Stephen Challener (Redshrike)
+Sources: https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles,https://opengameart.org/content/lpc-medieval-fantasy-character-sprites,http://opengameart.org/content/lpc-clothing-updates,https://opengameart.org/content/lpc-expanded-pants
+Notes: original male pants by wulax, edited for female by Joe White, recolors and edits to v3 base by bluecarrot16, teen legs by ElizaWy derived from base, climb/jump/run/sit/emotes/revised combat by JaidynReiman based on ElizaWy's LPC Revised
+
+legs/pants/thin/walk.png
+Authors: bluecarrot16,JaidynReiman,ElizaWy,Joe White,Matthew Krohn (makrohn),Johannes Sjölund (wulax),Stephen Challener (Redshrike)
+Sources: https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles,https://opengameart.org/content/lpc-medieval-fantasy-character-sprites,http://opengameart.org/content/lpc-clothing-updates,https://opengameart.org/content/lpc-expanded-pants
+Notes: original male pants by wulax, edited for female by Joe White, recolors and edits to v3 base by bluecarrot16, teen legs by ElizaWy derived from base, climb/jump/run/sit/emotes/revised combat by JaidynReiman based on ElizaWy's LPC Revised
+
+torso/clothes/longsleeve/longsleeve/female/run.png
+Authors: bluecarrot16,ElizaWy,JaidynReiman,Stephen Challener (Redshrike)
+Sources: https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles,https://opengameart.org/content/lpc-7-womens-shirts,http://opengameart.org/content/lpc-clothing-updates,https://opengameart.org/content/lpc-revised-character-basics,https://github.com/ElizaWy/LPC/tree/main/Characters/Clothing,https://opengameart.org/content/lpc-expanded-sit-run-jump-more,https://opengameart.org/content/lpc-expanded-simple-shirts
+Notes: original by ElizaWy, edited to v3 bases by bluecarrot16; cleanup and climb/jump/run/sit/emote/revised combat adapted from LPC Revised by JaidynReiman
+
+torso/clothes/longsleeve/longsleeve/female/shoot.png
+Authors: bluecarrot16,ElizaWy,JaidynReiman,Stephen Challener (Redshrike)
+Sources: https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles,https://opengameart.org/content/lpc-7-womens-shirts,http://opengameart.org/content/lpc-clothing-updates,https://opengameart.org/content/lpc-revised-character-basics,https://github.com/ElizaWy/LPC/tree/main/Characters/Clothing,https://opengameart.org/content/lpc-expanded-sit-run-jump-more,https://opengameart.org/content/lpc-expanded-simple-shirts
+Notes: original by ElizaWy, edited to v3 bases by bluecarrot16; cleanup and climb/jump/run/sit/emote/revised combat adapted from LPC Revised by JaidynReiman
+
+torso/clothes/longsleeve/longsleeve/female/slash.png
+Authors: bluecarrot16,ElizaWy,JaidynReiman,Stephen Challener (Redshrike)
+Sources: https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles,https://opengameart.org/content/lpc-7-womens-shirts,http://opengameart.org/content/lpc-clothing-updates,https://opengameart.org/content/lpc-revised-character-basics,https://github.com/ElizaWy/LPC/tree/main/Characters/Clothing,https://opengameart.org/content/lpc-expanded-sit-run-jump-more,https://opengameart.org/content/lpc-expanded-simple-shirts
+Notes: original by ElizaWy, edited to v3 bases by bluecarrot16; cleanup and climb/jump/run/sit/emote/revised combat adapted from LPC Revised by JaidynReiman
+
+torso/clothes/longsleeve/longsleeve/female/spellcast.png
+Authors: bluecarrot16,ElizaWy,JaidynReiman,Stephen Challener (Redshrike)
+Sources: https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles,https://opengameart.org/content/lpc-7-womens-shirts,http://opengameart.org/content/lpc-clothing-updates,https://opengameart.org/content/lpc-revised-character-basics,https://github.com/ElizaWy/LPC/tree/main/Characters/Clothing,https://opengameart.org/content/lpc-expanded-sit-run-jump-more,https://opengameart.org/content/lpc-expanded-simple-shirts
+Notes: original by ElizaWy, edited to v3 bases by bluecarrot16; cleanup and climb/jump/run/sit/emote/revised combat adapted from LPC Revised by JaidynReiman
+
+torso/clothes/longsleeve/longsleeve/female/walk.png
+Authors: bluecarrot16,ElizaWy,JaidynReiman,Stephen Challener (Redshrike)
+Sources: https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles,https://opengameart.org/content/lpc-7-womens-shirts,http://opengameart.org/content/lpc-clothing-updates,https://opengameart.org/content/lpc-revised-character-basics,https://github.com/ElizaWy/LPC/tree/main/Characters/Clothing,https://opengameart.org/content/lpc-expanded-sit-run-jump-more,https://opengameart.org/content/lpc-expanded-simple-shirts
+Notes: original by ElizaWy, edited to v3 bases by bluecarrot16; cleanup and climb/jump/run/sit/emote/revised combat adapted from LPC Revised by JaidynReiman
+
+torso/clothes/longsleeve/longsleeve/male/run.png
+Authors: JaidynReiman,Johannes Sjölund (wulax)
+Sources: https://opengameart.org/content/lpc-medieval-fantasy-character-sprites,http://opengameart.org/content/lpc-clothing-updates,https://opengameart.org/content/lpc-revised-character-basics,https://github.com/ElizaWy/LPC/tree/main/Characters/Clothing,https://opengameart.org/content/lpc-expanded-sit-run-jump-more,https://opengameart.org/content/lpc-expanded-simple-shirts
+Notes: original by wulax; tweaks and further recolors by bluecarrot16; cleanup and climb/jump/run/sit/emote/revised combat adapted from LPC Revised by JaidynReiman
+
+torso/clothes/longsleeve/longsleeve/male/shoot.png
+Authors: JaidynReiman,Johannes Sjölund (wulax)
+Sources: https://opengameart.org/content/lpc-medieval-fantasy-character-sprites,http://opengameart.org/content/lpc-clothing-updates,https://opengameart.org/content/lpc-revised-character-basics,https://github.com/ElizaWy/LPC/tree/main/Characters/Clothing,https://opengameart.org/content/lpc-expanded-sit-run-jump-more,https://opengameart.org/content/lpc-expanded-simple-shirts
+Notes: original by wulax; tweaks and further recolors by bluecarrot16; cleanup and climb/jump/run/sit/emote/revised combat adapted from LPC Revised by JaidynReiman
+
+torso/clothes/longsleeve/longsleeve/male/slash.png
+Authors: JaidynReiman,Johannes Sjölund (wulax)
+Sources: https://opengameart.org/content/lpc-medieval-fantasy-character-sprites,http://opengameart.org/content/lpc-clothing-updates,https://opengameart.org/content/lpc-revised-character-basics,https://github.com/ElizaWy/LPC/tree/main/Characters/Clothing,https://opengameart.org/content/lpc-expanded-sit-run-jump-more,https://opengameart.org/content/lpc-expanded-simple-shirts
+Notes: original by wulax; tweaks and further recolors by bluecarrot16; cleanup and climb/jump/run/sit/emote/revised combat adapted from LPC Revised by JaidynReiman
+
+torso/clothes/longsleeve/longsleeve/male/spellcast.png
+Authors: JaidynReiman,Johannes Sjölund (wulax)
+Sources: https://opengameart.org/content/lpc-medieval-fantasy-character-sprites,http://opengameart.org/content/lpc-clothing-updates,https://opengameart.org/content/lpc-revised-character-basics,https://github.com/ElizaWy/LPC/tree/main/Characters/Clothing,https://opengameart.org/content/lpc-expanded-sit-run-jump-more,https://opengameart.org/content/lpc-expanded-simple-shirts
+Notes: original by wulax; tweaks and further recolors by bluecarrot16; cleanup and climb/jump/run/sit/emote/revised combat adapted from LPC Revised by JaidynReiman
+
+torso/clothes/longsleeve/longsleeve/male/walk.png
+Authors: JaidynReiman,Johannes Sjölund (wulax)
+Sources: https://opengameart.org/content/lpc-medieval-fantasy-character-sprites,http://opengameart.org/content/lpc-clothing-updates,https://opengameart.org/content/lpc-revised-character-basics,https://github.com/ElizaWy/LPC/tree/main/Characters/Clothing,https://opengameart.org/content/lpc-expanded-sit-run-jump-more,https://opengameart.org/content/lpc-expanded-simple-shirts
+Notes: original by wulax; tweaks and further recolors by bluecarrot16; cleanup and climb/jump/run/sit/emote/revised combat adapted from LPC Revised by JaidynReiman
+
+torso/clothes/longsleeve/longsleeves/female/run.png
+Authors: bluecarrot16,ElizaWy,JaidynReiman,Stephen Challener (Redshrike)
+Sources: https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles,https://opengameart.org/content/lpc-7-womens-shirts,http://opengameart.org/content/lpc-clothing-updates,https://opengameart.org/content/lpc-revised-character-basics,https://github.com/ElizaWy/LPC/tree/main/Characters/Clothing,https://opengameart.org/content/lpc-expanded-sit-run-jump-more,https://opengameart.org/content/lpc-expanded-simple-shirts
+Notes: original by ElizaWy, edited to v3 bases by bluecarrot16; cleanup and climb/jump/run/sit/emote/revised combat adapted from LPC Revised by JaidynReiman
+
+torso/clothes/longsleeve/longsleeves/female/shoot.png
+Authors: bluecarrot16,ElizaWy,JaidynReiman,Stephen Challener (Redshrike)
+Sources: https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles,https://opengameart.org/content/lpc-7-womens-shirts,http://opengameart.org/content/lpc-clothing-updates,https://opengameart.org/content/lpc-revised-character-basics,https://github.com/ElizaWy/LPC/tree/main/Characters/Clothing,https://opengameart.org/content/lpc-expanded-sit-run-jump-more,https://opengameart.org/content/lpc-expanded-simple-shirts
+Notes: original by ElizaWy, edited to v3 bases by bluecarrot16; cleanup and climb/jump/run/sit/emote/revised combat adapted from LPC Revised by JaidynReiman
+
+torso/clothes/longsleeve/longsleeves/female/slash.png
+Authors: bluecarrot16,ElizaWy,JaidynReiman,Stephen Challener (Redshrike)
+Sources: https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles,https://opengameart.org/content/lpc-7-womens-shirts,http://opengameart.org/content/lpc-clothing-updates,https://opengameart.org/content/lpc-revised-character-basics,https://github.com/ElizaWy/LPC/tree/main/Characters/Clothing,https://opengameart.org/content/lpc-expanded-sit-run-jump-more,https://opengameart.org/content/lpc-expanded-simple-shirts
+Notes: original by ElizaWy, edited to v3 bases by bluecarrot16; cleanup and climb/jump/run/sit/emote/revised combat adapted from LPC Revised by JaidynReiman
+
+torso/clothes/longsleeve/longsleeves/female/spellcast.png
+Authors: bluecarrot16,ElizaWy,JaidynReiman,Stephen Challener (Redshrike)
+Sources: https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles,https://opengameart.org/content/lpc-7-womens-shirts,http://opengameart.org/content/lpc-clothing-updates,https://opengameart.org/content/lpc-revised-character-basics,https://github.com/ElizaWy/LPC/tree/main/Characters/Clothing,https://opengameart.org/content/lpc-expanded-sit-run-jump-more,https://opengameart.org/content/lpc-expanded-simple-shirts
+Notes: original by ElizaWy, edited to v3 bases by bluecarrot16; cleanup and climb/jump/run/sit/emote/revised combat adapted from LPC Revised by JaidynReiman
+
+torso/clothes/longsleeve/longsleeves/female/walk.png
+Authors: bluecarrot16,ElizaWy,JaidynReiman,Stephen Challener (Redshrike)
+Sources: https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles,https://opengameart.org/content/lpc-7-womens-shirts,http://opengameart.org/content/lpc-clothing-updates,https://opengameart.org/content/lpc-revised-character-basics,https://github.com/ElizaWy/LPC/tree/main/Characters/Clothing,https://opengameart.org/content/lpc-expanded-sit-run-jump-more,https://opengameart.org/content/lpc-expanded-simple-shirts
+Notes: original by ElizaWy, edited to v3 bases by bluecarrot16; cleanup and climb/jump/run/sit/emote/revised combat adapted from LPC Revised by JaidynReiman
+
+torso/clothes/longsleeve/longsleeves/male/run.png
+Authors: JaidynReiman,Johannes Sjölund (wulax)
+Sources: https://opengameart.org/content/lpc-medieval-fantasy-character-sprites,http://opengameart.org/content/lpc-clothing-updates,https://opengameart.org/content/lpc-revised-character-basics,https://github.com/ElizaWy/LPC/tree/main/Characters/Clothing,https://opengameart.org/content/lpc-expanded-sit-run-jump-more,https://opengameart.org/content/lpc-expanded-simple-shirts
+Notes: original by wulax; tweaks and further recolors by bluecarrot16; cleanup and climb/jump/run/sit/emote/revised combat adapted from LPC Revised by JaidynReiman
+
+torso/clothes/longsleeve/longsleeves/male/shoot.png
+Authors: JaidynReiman,Johannes Sjölund (wulax)
+Sources: https://opengameart.org/content/lpc-medieval-fantasy-character-sprites,http://opengameart.org/content/lpc-clothing-updates,https://opengameart.org/content/lpc-revised-character-basics,https://github.com/ElizaWy/LPC/tree/main/Characters/Clothing,https://opengameart.org/content/lpc-expanded-sit-run-jump-more,https://opengameart.org/content/lpc-expanded-simple-shirts
+Notes: original by wulax; tweaks and further recolors by bluecarrot16; cleanup and climb/jump/run/sit/emote/revised combat adapted from LPC Revised by JaidynReiman
+
+torso/clothes/longsleeve/longsleeves/male/slash.png
+Authors: JaidynReiman,Johannes Sjölund (wulax)
+Sources: https://opengameart.org/content/lpc-medieval-fantasy-character-sprites,http://opengameart.org/content/lpc-clothing-updates,https://opengameart.org/content/lpc-revised-character-basics,https://github.com/ElizaWy/LPC/tree/main/Characters/Clothing,https://opengameart.org/content/lpc-expanded-sit-run-jump-more,https://opengameart.org/content/lpc-expanded-simple-shirts
+Notes: original by wulax; tweaks and further recolors by bluecarrot16; cleanup and climb/jump/run/sit/emote/revised combat adapted from LPC Revised by JaidynReiman
+
+torso/clothes/longsleeve/longsleeves/male/spellcast.png
+Authors: JaidynReiman,Johannes Sjölund (wulax)
+Sources: https://opengameart.org/content/lpc-medieval-fantasy-character-sprites,http://opengameart.org/content/lpc-clothing-updates,https://opengameart.org/content/lpc-revised-character-basics,https://github.com/ElizaWy/LPC/tree/main/Characters/Clothing,https://opengameart.org/content/lpc-expanded-sit-run-jump-more,https://opengameart.org/content/lpc-expanded-simple-shirts
+Notes: original by wulax; tweaks and further recolors by bluecarrot16; cleanup and climb/jump/run/sit/emote/revised combat adapted from LPC Revised by JaidynReiman
+
+torso/clothes/longsleeve/longsleeves/male/walk.png
+Authors: JaidynReiman,Johannes Sjölund (wulax)
+Sources: https://opengameart.org/content/lpc-medieval-fantasy-character-sprites,http://opengameart.org/content/lpc-clothing-updates,https://opengameart.org/content/lpc-revised-character-basics,https://github.com/ElizaWy/LPC/tree/main/Characters/Clothing,https://opengameart.org/content/lpc-expanded-sit-run-jump-more,https://opengameart.org/content/lpc-expanded-simple-shirts
+Notes: original by wulax; tweaks and further recolors by bluecarrot16; cleanup and climb/jump/run/sit/emote/revised combat adapted from LPC Revised by JaidynReiman
+

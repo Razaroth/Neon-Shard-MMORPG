@@ -170,6 +170,20 @@ func build(owner_world: Node2D) -> void:
 	interaction.position = Vector2(440, 617)
 	var badge := label(game_hud, "COMMUNITY WORLD\nPRIVATE TEST BUILD", 12, Color("90a9c2"))
 	badge.position = Vector2(1060, 28)
+	var credits := AcceptDialog.new()
+	credits.title = "Sprite art credits · LPC contributors"
+	var credits_text := RichTextLabel.new()
+	credits_text.custom_minimum_size = Vector2(800, 440)
+	credits_text.text = FileAccess.get_file_as_string("res://assets/lpc/CREDITS.txt")
+	credits.add_child(credits_text)
+	add_child(credits)
+	for parent in [menu, game_hud]:
+		var credit_button := Button.new()
+		credit_button.text = "SPRITE ART CREDITS"
+		credit_button.position = Vector2(1040, 8) if parent == menu else Vector2(1040, 670)
+		credit_button.pressed.connect(func() -> void: credits.popup_centered())
+		parent.add_child(credit_button)
+
 
 func choose(id: String) -> void:
 	selected = Roles.valid(id)

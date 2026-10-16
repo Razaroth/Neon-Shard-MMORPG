@@ -1,10 +1,12 @@
-# Neon Shard
+# Neon Shard · Classic sprite preview
+
+This branch is a playable animation study following the requested classic pixel-art RPG direction. It changes in-game characters to artist-authored LPC pixel sprites; the painted city and portraits remain. The main branch is unchanged.
 
 An original cyberpunk online game built with Godot 4.6.3. Communities host their own dedicated persistent worlds. The current playable areas are **Kairo Exchange** and a connected **Maintenance Bay**, two enclosed cutaway interiors with authored floors, walls, machinery and support columns. This is an early multiplayer prototype, not a finished MMORPG.
 
 ## Play on Windows (64-bit)
 
-1. [Download the game source ZIP](https://github.com/Razaroth/Neon-Shard-MMORPG/archive/refs/heads/main.zip), then choose **Extract All**. Run from the extracted folder, not inside the ZIP.
+1. [Download the game source ZIP](https://github.com/Razaroth/Neon-Shard-MMORPG/archive/refs/heads/classic-sprite-preview.zip), then choose **Extract All**. Run from the extracted folder, not inside the ZIP.
 2. Double-click **Play-Windows.cmd**. The first run downloads Godot 4.6.3 from its official GitHub release, verifies the pinned SHA-512 checksum, and imports the game assets. Internet is needed for that first download. No editor installation or administrator account is required.
 3. Choose a class and character slot, leave the address at **127.0.0.1**, then click **CONNECT**. Keep the launcher open while playing; closing the game ends its local server.
 
@@ -40,7 +42,7 @@ Set `GODOT_BIN` if your executable has another name. See [hosting instructions](
 
 ## Characters and persistence
 
-Vanguard, Cipher, Ronin, Ghost and Machinist have distinct server-enforced combat stats, portraits and animated in-game sprites. Each class uses a stable 2D skin with continuous mesh-based breathing, strides, coat follow-through and class-specific attack feedback. Movement accelerates and brakes smoothly; walk/run transitions retain gait phase and stride follows actual distance. Articulated leg joints preserve limb lengths, foot targets stay planted through stance, and stops settle without pulling boots back to the starting pose. Mirrored left/right facing eases through turns. Attack motion follows server-confirmed attempts and cannot change damage or cooldowns. This is a procedural 2D motion pass, not release-quality authored skeletal animation: full eight-direction turns, hit reactions, death clips and further rig polish remain future work. Each client identity has five independent slots per server. Existing slots restore their saved class; an unused slot lets you try a different class. Separate identities can be selected with `--identity-file /absolute/path/identity.cfg`.
+Vanguard, Cipher, Ronin, Ghost and Machinist have distinct server-enforced combat stats, portraits and animated in-game sprites. This preview uses fixed, authored pixel-art frames for idle, walk, run and attacks, with four individually drawn directional views. Eight contact/passing frames form a stride; attack timing follows the server. Sprite outlines remain sharp at integer scale, with no mesh bending, stretch, crossfade or pose interpolation. Movement artwork is a study rather than final character production art. Each client identity has five independent slots per server. Existing slots restore their saved class; an unused slot lets you try a different class. Separate identities can be selected with `--identity-file /absolute/path/identity.cfg`.
 
 The server saves class, room, health, position, scrap, credits and contract progress every five seconds, on observed disconnect, and on acknowledged leave. Travel and contract turn-in save immediately. Defeat returns you to a safe arrival point in your current room with full health; resources and progress are retained. Old positions outside the new room are moved onto a valid floor location without resetting the character. Older records with no class become Ronin in slot 1.
 
@@ -69,3 +71,5 @@ Implemented: dedicated server, persistent character slots, authoritative movemen
 Next: secure authentication/access controls and backups; more rooms and district transitions; full eight-direction animation and hit/death reactions; equipment, more contracts and enemies; chat, parties and trading. Larger world simulation, interest management and population targets require profiling and load tests. Only two concurrent clients have been exercised; the 32-connection admission setting is not a supported capacity claim.
 
 The current ENet identity protocol is unencrypted and intended for trusted private testing. Public hosting hardening is unfinished. The marked concourse/maintenance doorway works; shops and other painted doors remain environmental art. No paid infrastructure has been provisioned.
+
+Sprite reference artwork: LPC contributors, used under OGA-BY 3.0. See [full credits](assets/lpc/CREDITS.txt), also available through **Sprite Art Credits** in the game. These reference outfits are not the finished cyberpunk class designs. Original code remains under the repository license.
