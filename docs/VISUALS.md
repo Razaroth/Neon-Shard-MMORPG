@@ -18,11 +18,11 @@ Movement, attack sightlines and navigation use that geometry. Actors cannot cros
 
 The marked upper-right concourse doorway leads to the Maintenance Bay; its upper-left doorway returns to the concourse. Approach and press E. The bay uses its own original painting (`assets/interiors/maintenance-bay.png`), floor polygon, support footprint, navigation grid and drone simulation. Other painted doors and shops remain environmental set dressing.
 
-The server validates doorway range, sightline and cooldown, then chooses the destination. Room changes preserve health, class, resources and contract progress, save immediately and briefly fade the view. Snapshots and combat are isolated by room. Arrival protection lasts two seconds and ends immediately when attacking. Directional sprite animation, crowds and a connected larger city remain future work.
+The server validates doorway range, sightline and cooldown, then chooses the destination. Room changes preserve health, class, resources and contract progress, save immediately and briefly fade the view. Snapshots and combat are isolated by room. Arrival protection lasts two seconds and ends immediately when attacking. Full eight-direction sprite animation, crowds and a connected larger city remain future work.
 
 ## Class profiles
 
-| Class | Playstyle | Health | Speed | Reach | Damage | Attack interval |
+| Class | Playstyle | Health | Run speed | Reach | Damage | Attack interval |
 | --- | --- | ---: | ---: | ---: | ---: | ---: |
 | Vanguard | Armored frontline / breach cannon | 150 | 125 | 105 | 30 | 0.65 s |
 | Cipher | Hacking fantasy / neural pulse | 85 | 150 | 230 | 15 | 0.50 s |
@@ -30,7 +30,7 @@ The server validates doorway range, sightline and cooldown, then chooses the des
 | Ghost | Precision marksman / rail carbine | 80 | 170 | 280 | 35 | 0.90 s |
 | Machinist | Engineering fantasy / induction rig | 110 | 145 | 170 | 20 | 0.45 s |
 
-Speed and reach use world units. These are initial balance values, enforced by the server. Distinct stats, portraits and idle sprites are implemented; skill trees, stealth, hacking mechanics and deployable companions are not. Five character slots per identity/server retain their original class and progression.
+Speed and reach use world units. These are initial balance values, enforced by the server. Distinct stats, portraits and animated sprites are implemented; skill trees, stealth, hacking mechanics and deployable companions are not. Five character slots per identity/server retain their original class and progression.
 
 ## Validation and previews
 
@@ -44,6 +44,16 @@ With a display available, regenerate them after importing the project:
 ./tools/godot.sh --audio-driver Dummy --script tests/visual_capture.gd -- --capture-dir /tmp/neon-shard-captures
 ```
 
-Active generated art assets are both continuous room paintings, `assets/portraits/characters-atlas.png`, `assets/portraits/party-sprites.png`, and the drone/kiosk regions of `assets/city/props-atlas.png`. Earlier building and vector assets are retained but not loaded by the current gameplay renderer.
+Active generated art assets are the five `assets/animations/*.png` sheets, both continuous room paintings, `assets/portraits/characters-atlas.png`, and the drone/kiosk regions of `assets/city/props-atlas.png`. Earlier building and vector assets are retained but not loaded by the current gameplay renderer.
 
 ![Playable concourse](screenshots/interior.png)
+
+## Sprite animation pass
+
+Each class has a transparent 1536×1024 sheet with six columns and four rows: idle, walk, run, attack. The renderer selects rectangular regions without allocating per-frame textures. Texture sheets are cached once per client; the headless server does not load them. A common foot anchor retains floor registration at the current character scale. Attack cells trim their horizontal outer band to avoid adjacent-frame effects bleeding into the current pose.
+
+Idle plays at 5 fps, walking at 9 fps and running at 13 fps. Attack duration is capped at 0.5 seconds and 90% of the class cooldown, so the Ronin's fast strikes complete before the next attempt. The server advances an attack serial and sends its age; clients play each attempt once, including misses. Movement state uses actual displacement after wall collision; stale input and doorway travel clear movement. Shift selects the existing class run speed; normal walking is 65% of it. Facing follows projected movement or the server's attack target and persists when stopped.
+
+This is a first pass of generated six-frame cycles with mirrored left/right views, not full eight-direction artwork. Diagonal and vertical movement select the nearest horizontal facing. Frame consistency and foot contact still need hand polish; hit, death and equipment-specific animations are not implemented. Animation frame rates are presentation rates, not measured game performance.
+
+`tests/animation_rules.gd` checks clip transitions, speeds, retained facing, wall blocking, attack completion and stale-input handling for all five classes. `tests/animation_capture.gd` renders the staged ten-second [animation reel](screenshots/animations.gif); real ENet tests separately exercise walk/run snapshots, combat, travel and persistence.

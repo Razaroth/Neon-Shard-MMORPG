@@ -7,6 +7,7 @@ const Zones = preload("res://scripts/zones.gd")
 const Travel = preload("res://scripts/travel.gd")
 const Archetypes = preload("res://scripts/archetypes.gd")
 const Layout = preload("res://scripts/city_layout.gd")
+const Motion = preload("res://scripts/character_motion.gd")
 const CityVisuals = preload("res://scripts/city_visuals.gd")
 const Interface = preload("res://scripts/interface.gd")
 var visuals: RefCounted
@@ -45,6 +46,7 @@ var smoke_started := false
 var smoke_moved := false
 var smoke_finished := false
 var smoke_saw_peers := false
+var motion_observed: Dictionary = {}
 var host_field: LineEdit
 var status_label: Label
 var connect_button: Button
@@ -196,12 +198,13 @@ func register_character(identity: String, requested_class: String = "ronin", cha
 	print("PLAYER_JOINED peer=%s" % id)
 
 @rpc("any_peer", "call_remote", "unreliable_ordered")
-func submit_input(direction: Vector2) -> void:
+func submit_input(direction: Vector2, sprinting: bool = false) -> void:
 	if not server_mode or not direction.is_finite():
 		return
 	var id := multiplayer.get_remote_sender_id()
 	if players.has(id):
 		players[id].input = direction.limit_length(1.0)
+		players[id].sprinting = sprinting
 		players[id].last_input = elapsed
 
 @rpc("authority", "call_remote", "unreliable_ordered")
@@ -211,6 +214,8 @@ func receive_state(snapshot: Array, drones: Array) -> void:
 	for player in state:
 		if int(player.id) == local_id:
 			client_zone = Zones.valid(str(player.get("zone", "concourse")))
+			if OS.get_cmdline_user_args().has("--smoke-client"):
+				motion_observed["run" if player.running else "walk" if player.moving else "idle"] = true
 			interface.location.text = "N / S     " + Zones.info(client_zone).name
 			interface.interaction.text = ""
 			var door := Travel.door_position(client_zone)
@@ -266,10 +271,7 @@ func _physics_process(delta: float) -> void:
 				pending.erase(id)
 		for id in players:
 			var player: Dictionary = players[id]
-			var direction: Vector2 = player.input if elapsed - player.last_input < 0.3 else Vector2.ZERO
-			if elapsed - player.last_input >= 0.3:
-				player.attacking = false
-			player.position = Layout.move_actor(player.position, direction * Archetypes.stats(player.archetype).speed * delta, player.zone).clamp(Vector2.ONE * -WORLD_LIMIT, Vector2.ONE * WORLD_LIMIT)
+			Motion.step(player, delta, elapsed)
 		for zone in Zones.IDS:
 			combats[zone].step(delta, _zone_players(zone))
 		snapshot_clock += delta
@@ -301,14 +303,15 @@ func _physics_process(delta: float) -> void:
 				direction = smoke_direction
 				smoke_clock += delta
 				if smoke_clock > 6.0:
-					if smoke_moved and smoke_saw_peers:
-						_finish_smoke("SMOKE_OK authoritative movement observed")
+					if smoke_moved and smoke_saw_peers and motion_observed.has("walk") and motion_observed.has("run"):
+						_finish_smoke("SMOKE_OK authoritative walk/run animation states observed")
 						return
 					else:
 						_fail("No authoritative movement received")
 			if not smoke:
 				set_attack.rpc_id(1, Input.is_physical_key_pressed(KEY_SPACE))
-			submit_input.rpc_id(1, direction)
+			var running := (not OS.get_cmdline_user_args().has("--smoke-client") or smoke_clock > 3.0) if smoke else Input.is_physical_key_pressed(KEY_SHIFT)
+			submit_input.rpc_id(1, direction, running)
 		if smoke and elapsed > (65.0 if not travel_mode.is_empty() else 40.0 if gameplay_smoke else 12.0):
 			_fail("Smoke test timed out")
 		queue_redraw()
@@ -419,8 +422,8 @@ func _snapshots() -> Dictionary:
 	var snapshots := {"concourse": [], "maintenance": []}
 	for id in players:
 		var entry: Dictionary = players[id].duplicate()
-		entry.moving = entry.input.length_squared() > 0.01
-		for field in ["key", "input", "last_input", "next_travel"]:
+		entry.attack_age = maxf(0, elapsed - float(entry.get("attack_started", -100.0)))
+		for field in ["key", "input", "last_input", "next_travel", "sprinting", "attack_started"]:
 			entry.erase(field)
 		entry.id = id
 		snapshots[entry.zone].append(entry)

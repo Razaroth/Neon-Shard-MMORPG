@@ -164,7 +164,7 @@ func build(owner_world: Node2D) -> void:
 	control_background.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	control_background.add_theme_stylebox_override("panel", style(Color(0.025, 0.045, 0.08, 0.92), Color("2b4053"), 0))
 	game_hud.add_child(control_background)
-	var controls := label(game_hud, "WASD  MOVE     SPACE  ATTACK     E  INTERACT / TRAVEL     F8  EFFECTS", 12, Color("a6bbc9"))
+	var controls := label(game_hud, "WASD WALK   SHIFT RUN   SPACE ATTACK   E INTERACT / TRAVEL   F8 EFFECTS", 12, Color("a6bbc9"))
 	controls.position = Vector2(325, 674)
 	interaction = label(game_hud, "", 17, Color("89f8e6"))
 	interaction.position = Vector2(440, 617)

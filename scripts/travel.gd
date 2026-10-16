@@ -16,6 +16,11 @@ static func apply(player: Dictionary, clock: float) -> bool:
 	player.zone = destination
 	player.position = Layout.safe_position(Layout.unproject(Zones.info(destination).arrival - Layout.ART_ORIGIN), destination)
 	player.input = Vector2.ZERO
+	player.velocity = Vector2.ZERO
+	player.moving = false
+	player.running = false
+	player.sprinting = false
+	player.attack_started = -100.0
 	player.attacking = false
 	player.last_input = clock
 	player.next_travel = clock + COOLDOWN

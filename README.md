@@ -24,7 +24,7 @@ godot4 --headless --path . -- --server --port 2456
 
 Run the project, choose a class and character slot, and connect to `127.0.0.1`.
 
-- WASD / arrows: move across the hall.
+- WASD / arrows: walk. Hold Shift to run (uses the existing class speed; walking is 65% of that).
 - Hold Space: attack the closest visible drone in your class's range.
 - E: travel at a marked doorway, or use the concourse relay after defeating three drones, collecting the one-time 100-credit contract reward.
 - F8: toggle added dust and subtle actor light pools.
@@ -40,7 +40,7 @@ Set `GODOT_BIN` if your executable has another name. See [hosting instructions](
 
 ## Characters and persistence
 
-Vanguard, Cipher, Ronin, Ghost and Machinist have distinct server-enforced combat stats, portraits and in-game sprites. Each client identity has five independent slots per server. Existing slots restore their saved class; an unused slot lets you try a different class. Separate identities can be selected with `--identity-file /absolute/path/identity.cfg`.
+Vanguard, Cipher, Ronin, Ghost and Machinist have distinct server-enforced combat stats, portraits and animated in-game sprites. Each class has six-frame idle, walk, run and attack clips, with mirrored left/right facing. Attack animations follow server-confirmed attempts; they cannot change damage or cooldowns. This is the first animation pass: full eight-direction turns, hit reactions and death clips remain future work. Each client identity has five independent slots per server. Existing slots restore their saved class; an unused slot lets you try a different class. Separate identities can be selected with `--identity-file /absolute/path/identity.cfg`.
 
 The server saves class, room, health, position, scrap, credits and contract progress every five seconds, on observed disconnect, and on acknowledged leave. Travel and contract turn-in save immediately. Defeat returns you to a safe arrival point in your current room with full health; resources and progress are retained. Old positions outside the new room are moved onto a valid floor location without resetting the character. Older records with no class become Ronin in slot 1.
 
@@ -54,6 +54,7 @@ Requires Godot 4.6.3 and Python 3:
 ./tools/godot.sh --headless --script tests/class_rules.gd
 ./tools/godot.sh --headless --script tests/city_routes.gd
 ./tools/godot.sh --headless --script tests/travel_rules.gd
+./tools/godot.sh --headless --script tests/animation_rules.gd
 python3 tests/multiplayer_smoke.py
 ```
 
@@ -65,6 +66,6 @@ The rules check combat range/cadence, duplicate rewards, respawn, classes, room 
 
 Implemented: dedicated server, persistent character slots, authoritative movement/combat, drone AI, loot counts, one contract, and two connected playable interiors with registered collision, foreground occlusion and room-specific enemies.
 
-Next: secure authentication/access controls and backups; more rooms and district transitions; directional animation; equipment, more contracts and enemies; chat, parties and trading. Larger world simulation, interest management and population targets require profiling and load tests. Only two concurrent clients have been exercised; the 32-connection admission setting is not a supported capacity claim.
+Next: secure authentication/access controls and backups; more rooms and district transitions; full eight-direction animation and hit/death reactions; equipment, more contracts and enemies; chat, parties and trading. Larger world simulation, interest management and population targets require profiling and load tests. Only two concurrent clients have been exercised; the 32-connection admission setting is not a supported capacity claim.
 
 The current ENet identity protocol is unencrypted and intended for trusted private testing. Public hosting hardening is unfinished. The marked concourse/maintenance doorway works; shops and other painted doors remain environmental art. No paid infrastructure has been provisioned.

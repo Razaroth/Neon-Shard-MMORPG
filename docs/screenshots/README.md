@@ -6,6 +6,14 @@ These are actual Godot renders with dynamic game actors. They are staged visual 
 
 Characters are now **another 20% larger** (164.4 pixels tall), with matching foot shadows and selection rings, raised labels, and adjusted column fading. These previews show the updated scale in both rooms.
 
+## Sprite animations
+
+![Five-class animation playback](animations.gif)
+
+[Open animated GIF](animations.gif) · [Download MP4](animations.mp4)
+
+Staged Godot playback shows all five classes cycling through idle, walk, run, attack and mirrored left-facing run. In the game, use WASD to walk, hold Shift to run, and hold Space to attack. This first pass uses six frames per clip and two mirrored facings; full eight-direction views and hit/death animations remain future work.
+
 ## Maintenance Bay
 
 ![Playable maintenance bay](maintenance.png)

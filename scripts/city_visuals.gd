@@ -1,12 +1,12 @@
 extends RefCounted
 ## A continuous cutaway interior. Floor registration is shared with the server.
+const SpriteAnimation = preload("res://scripts/character_animation.gd")
 const Roles = preload("res://scripts/archetypes.gd")
 const Zones = preload("res://scripts/zones.gd")
 const Travel = preload("res://scripts/travel.gd")
 const Layout = preload("res://scripts/city_layout.gd")
 const CHARACTER_HEIGHT := 164.4
 const CHARACTER_SCALE := CHARACTER_HEIGHT / 76.0
-const PARTY_REGIONS := [Rect2(0, 0, 450, 793), Rect2(450, 0, 390, 793), Rect2(840, 0, 380, 793), Rect2(1220, 0, 420, 793), Rect2(1640, 0, 343, 793)]
 const COLUMN_OCCLUDERS := [
 	[Vector2(423, 450), Vector2(432, 160), Vector2(446, 145), Vector2(446, 0), Vector2(527, 0), Vector2(529, 153), Vector2(549, 165), Vector2(558, 433), Vector2(580, 476), Vector2(532, 506), Vector2(455, 498), Vector2(423, 480)],
 	[Vector2(1068, 596), Vector2(1092, 252), Vector2(1102, 234), Vector2(1102, 0), Vector2(1200, 0), Vector2(1202, 232), Vector2(1222, 253), Vector2(1214, 574), Vector2(1239, 625), Vector2(1180, 652), Vector2(1100, 643), Vector2(1068, 625)]
@@ -20,7 +20,9 @@ var room_cache: Dictionary = {}
 var zone := "concourse"
 var transition_clock := 0.0
 var transitions_enabled := true
-var party: Texture2D
+var animation = SpriteAnimation.new()
+var animation_textures: Dictionary = {}
+var animation_delta := 0.0
 var props: Texture2D
 var offset := Vector2.ZERO
 var time := 0.0
@@ -33,8 +35,9 @@ var font: Font = ThemeDB.fallback_font
 func _init() -> void:
 	room = load(Zones.info("concourse").art)
 	room_cache["concourse"] = room
-	party = load("res://assets/portraits/party-sprites.png")
 	props = load("res://assets/city/props-atlas.png")
+	for id in Roles.ORDER:
+		animation_textures[id] = load("res://assets/animations/" + id + ".png")
 
 func screen(point: Vector2) -> Vector2:
 	return offset + Layout.art_position(point)
@@ -45,6 +48,7 @@ func render(node: Node2D, players: Array, drones: Array, local_id: int, seconds:
 	detailed = effects
 	var delta := clampf(seconds - previous_time, 0, 0.1)
 	previous_time = seconds
+	animation_delta = delta
 	var incoming_zone := zone
 	for player in players:
 		if int(player.id) == local_id:
@@ -55,8 +59,13 @@ func render(node: Node2D, players: Array, drones: Array, local_id: int, seconds:
 			room_cache[zone] = load(Zones.info(zone).art)
 		room = room_cache[zone]
 		smooth_positions.clear()
+		animation.clear()
 		transition_clock = 0.25 if transitions_enabled else 0.0
 	transition_clock = maxf(0, transition_clock - delta)
+	var player_ids: Array = []
+	for player in players:
+		player_ids.append(int(player.id))
+	animation.retain(player_ids)
 	players = players.duplicate(true)
 	drones = drones.duplicate(true)
 	var keys: Array = []
@@ -127,14 +136,18 @@ func render(node: Node2D, players: Array, drones: Array, local_id: int, seconds:
 func draw_player(player: Dictionary, local_id: int) -> void:
 	var p := screen(player.position)
 	var style := Roles.stats(player.archetype)
-	var source: Rect2 = PARTY_REGIONS[maxi(Roles.ORDER.find(str(player.archetype)), 0)]
-	var dimensions := Vector2(source.size.x / source.size.y * CHARACTER_HEIGHT, CHARACTER_HEIGHT)
-	var moving: bool = player.get("moving", false)
-	var bob := sin(time * (11 if moving else 2)) * (1.0 if moving else 0.3)
+	var pose: Dictionary = animation.sample(player, animation_delta)
+	var texture: Texture2D = animation_textures[player.archetype]
+	var source: Rect2 = SpriteAnimation.region(texture.get_size(), pose)
+	# All frames use a common cell/foot anchor; no frame-by-frame recentering jitter.
+	var dimensions := source.size / source.size.y * CHARACTER_HEIGHT
+	var cell_size := texture.get_size() / Vector2(SpriteAnimation.COLUMNS, SpriteAnimation.ROWS)
+	var cell_origin := Vector2(pose.frame, pose.row) * cell_size
+	var origin := Vector2(-CHARACTER_HEIGHT * 0.5, -CHARACTER_HEIGHT + 3) + (source.position - cell_origin) / cell_size.y * CHARACTER_HEIGHT
 	draw_shadow(p, 13 * CHARACTER_SCALE)
-	canvas.draw_texture_rect_region(party, Rect2(p + Vector2(-dimensions.x * 0.5, -dimensions.y + 3 + bob), dimensions), source, Color("e0ece4"))
-	if player.attacking:
-		canvas.draw_arc(p - Vector2(0, 22 * CHARACTER_SCALE), 30 * CHARACTER_SCALE, time * 8, time * 8 + 2.2, 24, Color(style.color, 0.65), 2, true)
+	canvas.draw_set_transform(p, 0, Vector2(-1 if pose.mirror else 1, 1))
+	canvas.draw_texture_rect_region(texture, Rect2(origin, dimensions), source, Color("e0ece4"), false, true)
+	canvas.draw_set_transform(Vector2.ZERO, 0, Vector2.ONE)
 	if int(player.id) == local_id:
 		canvas.draw_arc(p, 16 * CHARACTER_SCALE, 0, TAU, 28, Color(style.color, 0.65), 1, true)
 	# Compact labels avoid covering the surrounding room architecture.

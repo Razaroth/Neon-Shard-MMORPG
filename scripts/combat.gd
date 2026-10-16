@@ -29,6 +29,13 @@ func prepare(player: Dictionary, saved: Dictionary) -> void:
 	player.hp = clampi(int(saved.get("hp", stats.hp)), 1, stats.hp)
 	player.next_attack = 0.0
 	player.attacking = false
+	player.attack_serial = 0
+	player.attack_started = -100.0
+	player.moving = false
+	player.running = false
+	player.sprinting = false
+	player.velocity = Vector2.ZERO
+	player.facing = Vector2(1, 0.5).normalized()
 	player.scrap = maxi(0, int(saved.get("scrap", 0)))
 	player.credits = maxi(0, int(saved.get("credits", 0)))
 	player.kills = clampi(int(saved.get("kills", 0)), 0, MISSION_TARGET)
@@ -47,6 +54,8 @@ func step(delta: float, players: Dictionary) -> void:
 		if player.attacking and clock >= player.next_attack:
 			# Consume the cooldown even on a miss; RPC frequency cannot increase damage.
 			player.next_attack = clock + Archetypes.stats(player.archetype).cooldown
+			player.attack_serial += 1
+			player.attack_started = clock
 			var target: Dictionary = {}
 			var distance: float = Archetypes.stats(player.archetype).range
 			for enemy in enemies:
@@ -55,6 +64,7 @@ func step(delta: float, players: Dictionary) -> void:
 					target = enemy
 					distance = candidate
 			if not target.is_empty():
+				player.facing = Layout.project(target.position - player.position).normalized()
 				target.hp -= Archetypes.stats(player.archetype).damage
 				if target.hp <= 0:
 					target.respawn = clock + 10.0
@@ -87,6 +97,11 @@ func step(delta: float, players: Dictionary) -> void:
 					target.position = spawn_position()
 					target.hp = target.max_hp
 					target.input = Vector2.ZERO
+					target.velocity = Vector2.ZERO
+					target.moving = false
+					target.running = false
+					target.attacking = false
+					target.attack_started = -100.0
 
 func interact(player: Dictionary) -> bool:
 	if zone != "concourse" or str(player.get("zone", "concourse")) != zone or player.position.distance_to(TERMINAL) > 100.0 or player.kills < MISSION_TARGET or player.rewarded:

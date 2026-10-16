@@ -42,3 +42,7 @@ Older saved positions inside new room walls or columns are automatically project
 ## Kairo Exchange interior
 
 The concourse and maintenance bay are connected by marked doorways (approach and press E). Travel is server validated and saves room and position immediately. Records without a room default to the concourse; invalid positions are moved onto that room’s floor. Each room has isolated enemies and player snapshots; enemy state in both rooms resets on restart. Their floor polygons and column footprints are shared by the server and client. Characters saved in the earlier city layout are moved to a valid room floor position on join; class and progression are preserved. The dedicated server loads geometry data but does not load the room texture. Matching client/server revisions remain required.
+
+## Animation and movement protocol
+
+Use the same updated source on clients and server: movement RPCs now carry a run intent, and snapshots include actual velocity, moving/running state, facing and server attack serial/age. Existing class speeds are run speeds; walking uses 65% of those values. Character save format and progression remain compatible. The Windows local launcher starts both from the same checkout.
