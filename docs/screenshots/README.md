@@ -1,4 +1,4 @@
-# Neon Shard · Classic sprite movement study
+# Neon Shard · Cyberpunk RPG sprite preview
 
 The active areas are **Kairo Exchange and its connected Maintenance Bay**, with characters walking inside connected architecture. It replaces the repeated full-building layout with an authored floor, surrounding walls, recessed counters, structural columns, and foreground railings.
 
@@ -14,9 +14,9 @@ Characters are now **another 20% larger** (164.4 pixels tall), with matching foo
 
 The latest preview adds a more forceful run: faster acceleration, quicker strides, a forward lean and a faint speed trail (toggle with F8). Maximum class speeds are unchanged.
 
-This is a **classic pixel-art RPG movement study**: complete sprite frames replace the rejected bending/warping approach. It uses clear contact/passing poses, eight-frame strides, separate walking/running, four individually drawn directions, and class-specific attacks.
+This preview redraws the **original cyberpunk class designs in the newer pixel-RPG style**, retaining distance-based movement, separate walking/running, directional views and class attacks. Complete frames replace the rejected bending/warping approach.
 
-The credited LPC sprites use artist-authored movement and reference outfits; final cyberpunk class artwork is still needed. The painted city and portraits remain; the main branch is unchanged. [Download this playable preview](https://github.com/Razaroth/Neon-Shard-MMORPG/archive/refs/heads/classic-sprite-preview.zip), extract it, and run `Play-Windows.cmd`.
+All five classes now have recognizable original costumes and gear. These generated redraws use credited LPC pose references and still need further art cleanup. The painted city and portraits remain; the main branch is unchanged. [Download this playable preview](https://github.com/Razaroth/Neon-Shard-MMORPG/archive/refs/heads/classic-sprite-preview.zip), extract it, and run `Play-Windows.cmd`.
 
 [Previous rejected mesh version](https://raw.githubusercontent.com/Razaroth/Neon-Shard-MMORPG/6256d0a/docs/screenshots/animations.gif)
 

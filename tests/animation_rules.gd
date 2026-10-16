@@ -1,22 +1,46 @@
 extends SceneTree
-const Sprites = preload("res://scripts/classic_animation.gd")
+const Sprites = preload("res://scripts/rpg_animation.gd")
 const Roles = preload("res://scripts/archetypes.gd")
 const Combat = preload("res://scripts/combat.gd")
 const Motion = preload("res://scripts/character_motion.gd")
 
 func _init() -> void:
+	var layouts: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://assets/rpg/manifest.json"))["classes"]
 	for role in Roles.ORDER:
-		for layer in Sprites.layers(role):
-			for clip in Sprites.COUNTS:
-				var texture: Texture2D = load("res://assets/lpc/" + layer.prefix + "/" + clip + ".png")
-				assert(texture.get_size() == Vector2(Sprites.COUNTS[clip] * 64, 256))
-		var texture: Texture2D = load("res://assets/lpc/body/bodies/" + Sprites.SKINS[role].body + "/walk.png")
-		var sheet := texture.get_image()
-		for view in 4:
-			var contact := sheet.get_region(Rect2i(64, view * 64, 64, 64)).get_data()
-			var passing := sheet.get_region(Rect2i(3 * 64, view * 64, 64, 64)).get_data()
-			var opposite := sheet.get_region(Rect2i(5 * 64, view * 64, 64, 64)).get_data()
-			assert(contact != passing and contact != opposite)
+		for clip in Sprites.COUNTS:
+			var texture: Texture2D = load("res://assets/rpg/" + role + "/" + clip + ".png")
+			assert(texture != null)
+			assert(FileAccess.get_sha256("res://assets/rpg/" + role + "/" + clip + ".png") == layouts[role][clip].sha256)
+			for anchor in layouts[role][clip].registration:
+				assert(anchor.height > 0 and anchor.scale_height > 0)
+			var sheet := texture.get_image()
+			var cell := Vector2(sheet.get_size()) / Vector2(Sprites.COUNTS[clip], 4)
+			assert(absf(cell.x / cell.y - 1.0) < 0.06, "Sprite sheets must preserve their square-cell grid")
+			for view in range(1, 4):
+				var y := int(layouts[role][clip].row_regions[view][0])
+				var opaque := 0
+				for x in sheet.get_width():
+					if sheet.get_pixel(x, y).a >= 230.0 / 255.0:
+						opaque += 1
+				assert(opaque <= 2, "Row boundaries must cross empty space, never a neighboring boot or head")
+			for view in 4:
+				var frames: Array = []
+				for frame in Sprites.COUNTS[clip]:
+					var pose := {"sheet": clip, "frame": frame, "view": view}
+					var region := Sprites.region(texture.get_size(), pose, layouts[role][clip])
+					assert(Rect2(Vector2.ZERO, texture.get_size()).encloses(region))
+					for polygon in layouts[role][clip].frames[view][frame].polygons:
+						var vertices := PackedVector2Array()
+						for point in polygon:
+							var vertex := Vector2(point[0], point[1])
+							assert(Rect2(Vector2.ZERO, texture.get_size()).has_point(vertex))
+							vertices.append(vertex)
+						assert(Geometry2D.triangulate_polygon(vertices).size() == (vertices.size() - 2) * 3)
+
+					var image := sheet.get_region(Rect2i(region))
+					assert(image.get_used_rect().get_area() > 0, "No animation frame may be empty")
+					frames.append(image.get_data())
+				assert(frames[1] != frames[3] and frames[1] != frames[5], "Moving poses must contain different artwork")
 		var actor := {"id": 2, "position": Vector2.ZERO, "input": Vector2.ZERO, "last_input": 0.0}
 		Combat.new().prepare(actor, {"archetype": role})
 		var animation = Sprites.new()
@@ -50,7 +74,6 @@ func _init() -> void:
 		pose = animation.sample(actor, float(Roles.stats(role).cooldown) * 0.45)
 		assert(pose.clip == "attack" and pose.frame > 0)
 		assert(animation.sample(actor, 1.0).clip == "idle")
-		assert(Rect2(Vector2.ZERO, Vector2(Sprites.COUNTS[pose.sheet] * 64, 256)).encloses(pose.region))
 		animation.retain([])
 		assert(animation.actors.is_empty())
 	# Sprint starts more decisively, but retains the class speed cap and collision.
@@ -77,5 +100,5 @@ func _init() -> void:
 			animation.sample(actor, 1.0 / rate)
 		phases.append(animation.actors[3].phase)
 	assert(absf(phases[0] - phases[1]) < 0.0001)
-	print("CLASSIC_ANIMATION_RULES_OK layered LPC sheets, distinct contact/passing poses, four facings, view hysteresis, server attack timing, frame bounds and distance-driven playback")
+	print("RPG_ANIMATION_RULES_OK five converted classes, isolated atlas rows, distinct contact/passing poses, four facings, view hysteresis, server attack timing, frame bounds and distance-driven playback")
 	quit()

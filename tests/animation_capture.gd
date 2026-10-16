@@ -43,7 +43,7 @@ func capture() -> void:
 		if tick >= 143 and tick < 188: clip = "attack"
 		if tick >= 188 and tick < 225: clip = "walk"
 		world.elapsed = tick / 30.0
-		world.hud.text = "MOTION REFINEMENT\n" + clip.to_upper() + "\n\nClassic frame-based sprites\nStaged Godot playback"
+		world.hud.text = "MOTION REFINEMENT\n" + clip.to_upper() + "\n\nCyberpunk RPG redraws\nStaged Godot playback"
 		for actor in world.state:
 			actor.input = Vector2(-1, 1).normalized() if tick < 188 else Vector2(1, -1).normalized()
 			if clip not in ["walk", "run"]:

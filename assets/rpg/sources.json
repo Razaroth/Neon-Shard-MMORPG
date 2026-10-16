@@ -1,0 +1,17 @@
+{
+  "ronin/walk": "exec-f8942fcb-6ce2-487a-8f8c-2393d4ce2dc3.png",
+  "ronin/run": "exec-416aaffb-db3d-478d-bd60-1296c7fe7b92.png",
+  "vanguard/walk": "exec-d0b30ac0-04f5-4a64-98f8-d85474258758.png",
+  "vanguard/run": "exec-569d612d-1f92-4da3-9efb-5b71d7968954.png",
+  "ronin/attack": "exec-173f9e3d-b7c4-4552-8b07-3875f3a527e1.png",
+  "cipher/walk": "exec-ad78312b-a0e4-4e29-8785-84aaa16ff56e.png",
+  "cipher/run": "exec-80f25b04-ebd9-4abb-a98f-03271fcbf52b.png",
+  "cipher/attack": "exec-3930d319-7636-4e26-920f-8fd6aefec5ff.png",
+  "ghost/walk": "exec-e93f5658-b30b-4469-9a3f-2a96e016b8ae.png",
+  "machinist/walk": "exec-971846ba-1caa-442e-bb88-b4fdf567f5d0.png",
+  "vanguard/attack": "exec-fb523912-73d1-481a-beb1-e7d315201e25.png",
+  "ghost/run": "exec-d33729c9-d07b-4539-8185-9e05d7538a1f.png",
+  "ghost/attack": "exec-51970a37-6e5f-4cc4-94ec-000824809fe3.png",
+  "machinist/run": "exec-dc7e5120-500f-4149-8542-ba881b7cdfdd.png",
+  "machinist/attack": "exec-990205e6-9ce0-46bc-9122-38dcc2eb7500.png"
+}

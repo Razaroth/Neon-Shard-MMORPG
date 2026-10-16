@@ -1,6 +1,6 @@
-# Neon Shard · Classic sprite preview
+# Neon Shard · Cyberpunk RPG sprite preview
 
-This branch is a playable animation study following the requested classic pixel-art RPG direction. It changes in-game characters to artist-authored LPC pixel sprites; the painted city and portraits remain. The main branch is unchanged.
+This branch is a playable sprite study: the original cyberpunk class designs are redrawn in the newer pixel-RPG style, with directional movement and the dash run. The painted city and portraits remain. The main branch is unchanged.
 
 An original cyberpunk online game built with Godot 4.6.3. Communities host their own dedicated persistent worlds. The current playable areas are **Kairo Exchange** and a connected **Maintenance Bay**, two enclosed cutaway interiors with authored floors, walls, machinery and support columns. This is an early multiplayer prototype, not a finished MMORPG.
 
@@ -42,7 +42,7 @@ Set `GODOT_BIN` if your executable has another name. See [hosting instructions](
 
 ## Characters and persistence
 
-Vanguard, Cipher, Ronin, Ghost and Machinist have distinct server-enforced combat stats, portraits and animated in-game sprites. This preview uses fixed, authored pixel-art frames for idle, walk, run and attacks, with four individually drawn directional views. Eight contact/passing frames form a stride; attack timing follows the server. Sprite outlines remain sharp at integer scale, with no mesh bending, stretch, crossfade or pose interpolation. Movement artwork is a study rather than final character production art. Each client identity has five independent slots per server. Existing slots restore their saved class; an unused slot lets you try a different class. Separate identities can be selected with `--identity-file /absolute/path/identity.cfg`.
+Vanguard, Cipher, Ronin, Ghost and Machinist have distinct server-enforced combat stats, portraits and animated in-game sprites. This preview uses fixed pixel-RPG redraws for idle, walk, run and attacks, with four individually drawn directional views. Eight frames form a stride; attack timing follows the server. Nearest filtering preserves the pixel-art treatment. Fixed foot anchors and measured scale register the separate sheets; no mesh bending or limb deformation is active. Movement artwork is a study rather than final character production art. Each client identity has five independent slots per server. Existing slots restore their saved class; an unused slot lets you try a different class. Separate identities can be selected with `--identity-file /absolute/path/identity.cfg`.
 
 The server saves class, room, health, position, scrap, credits and contract progress every five seconds, on observed disconnect, and on acknowledged leave. Travel and contract turn-in save immediately. Defeat returns you to a safe arrival point in your current room with full health; resources and progress are retained. Old positions outside the new room are moved onto a valid floor location without resetting the character. Older records with no class become Ronin in slot 1.
 
@@ -72,4 +72,4 @@ Next: secure authentication/access controls and backups; more rooms and district
 
 The current ENet identity protocol is unencrypted and intended for trusted private testing. Public hosting hardening is unfinished. The marked concourse/maintenance doorway works; shops and other painted doors remain environmental art. No paid infrastructure has been provisioned.
 
-Sprite reference artwork: LPC contributors, used under OGA-BY 3.0. See [full credits](assets/lpc/CREDITS.txt), also available through **Sprite Art Credits** in the game. These reference outfits are not the finished cyberpunk class designs. Original code remains under the repository license.
+The converted sprite artwork uses the original class designs and credited LPC pose references, under OGA-BY 3.0. See [full credits](assets/lpc/CREDITS.txt), also available through **Sprite Art Credits** in the game. The new redraws are a playable art pass; their frame consistency still needs visual review. Original code remains under the repository license.

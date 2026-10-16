@@ -174,7 +174,7 @@ func build(owner_world: Node2D) -> void:
 	credits.title = "Sprite art credits · LPC contributors"
 	var credits_text := RichTextLabel.new()
 	credits_text.custom_minimum_size = Vector2(800, 440)
-	credits_text.text = FileAccess.get_file_as_string("res://assets/lpc/CREDITS.txt")
+	credits_text.text = "Cyberpunk class redraws use the original Neon Shard designs and LPC pose references.\nRedrawn costumes, hair, heads, weapons and effects are new generated artwork.\nThe following artists supplied the pose references (OGA-BY 3.0):\n\n" + FileAccess.get_file_as_string("res://assets/lpc/CREDITS.txt")
 	credits.add_child(credits_text)
 	add_child(credits)
 	for parent in [menu, game_hud]:

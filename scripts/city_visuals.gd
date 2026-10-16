@@ -1,6 +1,6 @@
 extends RefCounted
 ## A continuous cutaway interior. Floor registration is shared with the server.
-const SpriteAnimation = preload("res://scripts/classic_animation.gd")
+const SpriteAnimation = preload("res://scripts/rpg_animation.gd")
 const Roles = preload("res://scripts/archetypes.gd")
 const Zones = preload("res://scripts/zones.gd")
 const Travel = preload("res://scripts/travel.gd")
@@ -22,6 +22,8 @@ var transition_clock := 0.0
 var transitions_enabled := true
 var animation = SpriteAnimation.new()
 var animation_textures: Dictionary = {}
+var sprite_layout: Dictionary = {}
+var frame_geometry: Dictionary = {}
 var animation_delta := 0.0
 var props: Texture2D
 var offset := Vector2.ZERO
@@ -36,16 +38,35 @@ func _init() -> void:
 	room = load(Zones.info("concourse").art)
 	room_cache["concourse"] = room
 	props = load("res://assets/city/props-atlas.png")
+	sprite_layout = JSON.parse_string(FileAccess.get_file_as_string("res://assets/rpg/manifest.json"))["classes"]
 	for role in Roles.ORDER:
 		animation_textures[role] = {}
-		for layer in SpriteAnimation.layers(role):
-			for clip in SpriteAnimation.COUNTS:
-				var path := "res://assets/lpc/" + str(layer.prefix) + "/" + str(clip) + ".png"
-				if not animation_textures[role].has(path):
-					var texture := CanvasTexture.new()
-					texture.diffuse_texture = load(path)
-					texture.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
-					animation_textures[role][path] = texture
+		frame_geometry[role] = {}
+		for clip in SpriteAnimation.COUNTS:
+			var texture := CanvasTexture.new()
+			texture.diffuse_texture = load("res://assets/rpg/" + role + "/" + str(clip) + ".png")
+			texture.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
+			animation_textures[role][clip] = texture
+			var views: Array = []
+			for view in 4:
+				var poses: Array = []
+				var registration: Dictionary = sprite_layout[role][clip].registration[view]
+				var scale := CHARACTER_HEIGHT / float(registration.scale_height)
+				for frame in SpriteAnimation.COUNTS[clip]:
+					var data: Dictionary = sprite_layout[role][clip].frames[view][frame]
+					var foot := Vector2(data.foot[0], data.foot[1])
+					var parts: Array = []
+					for polygon in data.polygons:
+						var vertices := PackedVector2Array()
+						var uv := PackedVector2Array()
+						for point in polygon:
+							var source := Vector2(point[0], point[1])
+							vertices.append((source - foot) * scale)
+							uv.append(source / texture.get_size())
+						parts.append({"vertices": vertices, "uv": uv})
+					poses.append(parts)
+				views.append(poses)
+			frame_geometry[role][clip] = views
 
 func screen(point: Vector2) -> Vector2:
 	return offset + Layout.art_position(point)
@@ -146,22 +167,17 @@ func draw_player(player: Dictionary, local_id: int) -> void:
 	var style := Roles.stats(player.archetype)
 	var pose: Dictionary = animation.sample(player, animation_delta)
 	draw_shadow(p, 13 * CHARACTER_SCALE)
-	var scale := maxf(1, roundf(CHARACTER_HEIGHT / SpriteAnimation.VISIBLE_HEIGHT))
+	var texture: Texture2D = animation_textures[player.archetype][pose.sheet]
 	var facing: Vector2 = player.get("facing", Vector2.RIGHT)
 	var dashing: bool = pose.clip == "run"
-	# Lean the complete drawing around its planted foot; never distort anatomy.
-	var lean := facing.x * 0.11 if dashing else 0.0
+	var lean := facing.x * 0.06 if dashing else 0.0
 	var passes := [1, 0] if dashing and detailed else [0]
 	for trail in passes:
 		var origin: Vector2 = (p - facing * 19 * int(trail)).round()
-		canvas.draw_set_transform(origin, lean, Vector2.ONE)
-		for layer in SpriteAnimation.layers(player.archetype):
-			var path := "res://assets/lpc/" + str(layer.prefix) + "/" + str(pose.sheet) + ".png"
-			var texture: Texture2D = animation_textures[player.archetype][path]
-			var tint: Color = layer.color
-			if trail > 0:
-				tint = Color(style.color, 0.10)
-			canvas.draw_texture_rect_region(texture, Rect2(-SpriteAnimation.FOOT * scale, SpriteAnimation.CELL * scale), pose.region, tint)
+		canvas.draw_set_transform(origin, lean, Vector2(-1 if pose.mirror else 1, 1))
+		var tint := Color(style.color, 0.10) if trail > 0 else Color.WHITE
+		for part in frame_geometry[player.archetype][pose.sheet][int(pose.view)][int(pose.frame)]:
+			canvas.draw_polygon(part.vertices, PackedColorArray([tint]), part.uv, texture)
 	canvas.draw_set_transform(Vector2.ZERO, 0, Vector2.ONE)
 	if int(player.id) == local_id:
 		canvas.draw_arc(p, 16 * CHARACTER_SCALE, 0, TAU, 28, Color(style.color, 0.65), 1, true)
