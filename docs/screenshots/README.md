@@ -1,31 +1,37 @@
-# Neon Shard · art pass 2
+# Neon Shard · enclosed city
 
-The playable Godot client now uses detailed painterly architecture, cinematic character portraits, and matching isometric character/prop sprites. These screenshots are **actual Godot renders** of a staged visual test scene, not standalone concept images or a live multiplayer session.
+The city now fills the view with dense buildings and narrow streets. The broad open plaza has become a compact relay intersection, with skybridges and hanging service cables above the routes. Buildings continue beyond the playable boundary rather than exposing an empty edge.
 
-## Updated character selection
+These are **actual Godot renders** of a staged scene, not standalone concept images or a live multiplayer session.
 
-Five original classes: Vanguard, Cipher, Ronin, Ghost, and Machinist. Each server supports five character slots per player identity.
+## Enclosed relay district
 
-![Updated character selection](character-selection.png)
+![Enclosed city](city.png)
 
-[Full size](character-selection.png)
+[Open full-size city image](city.png) · [Effects reduced](city-low.png)
 
-## Updated city district
+## Street and boundary views
 
-Lantern-lit shops, glass towers, industrial workshops, neon nightlife, textured streets, rain, streetlights, and detailed drones and vehicles.
+![Alley view](city-alley.png)
 
-![Updated city](city.png)
+[Open full-size alley image](city-alley.png)
 
-[Full size](city.png) · [Effects reduced](city-low.png)
+![City at the playable boundary](city-edge.png)
 
-## All five classes
+[Open full-size boundary image](city-edge.png)
+
+## Character selection
+
+![Character selection](character-selection.png)
 
 [Vanguard](class-vanguard.png) · [Cipher](class-cipher.png) · [Ronin](class-ronin.png) · [Ghost](class-ghost.png) · [Machinist](class-machinist.png)
 
-## Compare the previous art pass
+## Compare earlier layouts
 
-[Previous character selection](character-selection-before.png) · [Previous city](city-before.png)
+[Previous open layout with the same art](city-open-layout.png) · [Original city](city-before.png) · [Original character selection](character-selection-before.png)
 
-This remains an early 2D game district. The artwork is generated and integrated as texture atlases; directional character animation, interiors, crowds, and a larger world remain future work. Networking, combat, character slots and restart persistence were separately verified by the integration test. These images are not a hardware performance benchmark.
+Movement collision, street navigation, enemy pursuit, blocked attack sightlines, and saved-position migration were checked. Multiplayer combat, character slots and restart persistence passed the integration test in this enclosed layout.
 
-This preview branch publishes the gallery for review. The development project remains in the working environment.
+The art is generated and integrated as 2D texture atlases. Overhead bridges are visual structures, not playable upper floors. Interiors, directional animation and crowds remain future work. These screenshots are not a hardware performance benchmark.
+
+This branch publishes the gallery for review; the development project remains in the working environment.
