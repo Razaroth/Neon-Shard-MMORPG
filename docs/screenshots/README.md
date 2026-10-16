@@ -60,4 +60,4 @@ These are two connected playable interiors, using original generated room painti
 
 Room collision, navigation around columns, enemy pursuit, blocked attacks, old-save relocation and camera bounds passed their checks. The real two-client integration test also passed movement, combat, mission rewards, character-slot persistence and server restart restoration, doorway travel, room isolation, maintenance combat, and return travel. Room, health and loot survived a server restart.
 
-The screenshots are not a hardware performance benchmark. This preview branch publishes the gallery; development source remains in the working environment.
+The screenshots are not a hardware performance benchmark. The complete playable project and Windows launcher are published on the repository’s main branch. See the root README for play instructions.

@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="440" height="520" viewBox="0 0 440 520">
+<defs><linearGradient id="armor" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#637588"/><stop offset=".43" stop-color="#27384c"/><stop offset="1" stop-color="#111b2d"/></linearGradient><linearGradient id="cloth" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#122033"/><stop offset=".5" stop-color="#304156"/><stop offset="1" stop-color="#0a1425"/></linearGradient><linearGradient id="accent" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#83ceff"/><stop offset="1" stop-color="#1c324b"/></linearGradient><linearGradient id="steel"><stop stop-color="#d5e3e7"/><stop offset=".4" stop-color="#657b91"/><stop offset="1" stop-color="#18283c"/></linearGradient></defs>
+<ellipse cx="220" cy="479" rx="102" ry="17" fill="#030a16" opacity=".65"/>
+<ellipse cx="220" cy="479" rx="87" ry="14" fill="none" stroke="#83ceff" stroke-width="1" opacity=".4"/>
+<!-- coat tails, articulated armored legs and boots -->
+<path d="M166 263L274 263L299 405L260 422L225 326L194 421L143 405Z" fill="url(#cloth)" stroke="#4b6077"/>
+<path d="M177 292L217 299L207 374L194 444L162 444L165 370Z" fill="url(#armor)" stroke="#607188"/>
+<path d="M224 298L261 292L274 372L281 444L248 447L230 378Z" fill="url(#armor)" stroke="#53677d"/>
+<path d="M166 361L202 359L199 384L163 386Z M238 360L269 361L273 385L243 386Z" fill="#0c1829" stroke="#596b7e"/>
+<path d="M170 368L192 368 M247 368L264 369" stroke="#83ceff" stroke-width="3"/>
+<path d="M162 433L195 433L198 470L182 481L145 478L149 464Z M248 436L279 433L288 461L304 472L300 481L250 480Z" fill="#0c1727" stroke="#53647b" stroke-width="2"/>
+<path d="M151 469L192 471 M254 471L295 473" stroke="#83ceff" stroke-width="2" opacity=".7"/>
+<!-- arms and cybernetic forearms -->
+<path d="M143 181L164 205L151 250L141 290L116 285L121 245Z M279 196L300 181L316 234L319 279L293 285L284 241Z" fill="url(#armor)" stroke="#60748c" stroke-width="2"/>
+<path d="M119 249L148 254L142 282L113 276Z M291 251L318 246L321 273L295 281Z" fill="#19283c" stroke="#83ceff"/>
+<path d="M115 280L139 287L134 309L119 314L108 303Z M295 282L319 277L327 298L316 313L300 307Z" fill="#19293c" stroke="#6a7d94"/>
+<path d="M139 174L176 153L264 153L301 174L285 209L266 206L261 294L177 294L171 206L154 210Z" fill="url(#armor)" stroke="#71849a" stroke-width="2"/>
+<path d="M176 159L218 177L216 258L178 245L167 189Z" fill="url(#accent)" opacity=".8"/>
+<path d="M228 174L262 161L274 190L261 246L227 257Z" fill="#101f32" stroke="#3c526b"/>
+<path d="M182 183L207 192 M185 197L206 206 M188 212L205 219" stroke="#83ceff" stroke-width="2"/>
+<path d="M226 180L226 262 M174 267L266 267" stroke="#8fa2b7" stroke-width="2"/>
+<path d="M168 272L273 272L270 293L169 293Z" fill="#101a2b" stroke="#5e728a"/>
+<rect x="209" y="273" width="24" height="18" rx="2" fill="#70889b"/><rect x="215" y="278" width="12" height="8" fill="#83ceff"/>
+<!-- neck seal and faceted helmet -->
+<path d="M196 136L245 136L252 159L223 174L190 158Z" fill="#101d30" stroke="#6c8094"/>
+<path d="M174 92L187 65L251 65L269 94L261 136L239 153L201 149L180 128Z" fill="url(#armor)" stroke="#73899f" stroke-width="2"/>
+<path d="M179 98L265 94L261 118L183 122Z" fill="#091323" stroke="#4a657d"/>
+<path d="M186 103L259 100L255 109L188 113Z" fill="#83ceff"/>
+<path d="M193 128L246 127L237 144L207 142Z" fill="#18283e" stroke="#5b728a"/>
+<path d="M208 132L236 132 M211 137L233 137" stroke="#7b8fa4"/>
+<circle cx="180" cy="112" r="6" fill="#112135" stroke="#83ceff"/><circle cx="264" cy="109" r="6" fill="#112135" stroke="#83ceff"/>
+<path d="M199 76L245 76 M192 82L253 82" stroke="#a2b0bc" opacity=".35"/>
+<path d="M152 162L174 153L175 199L157 207Z M265 153L284 160L288 207L267 197Z" fill="url(#accent)"/><path d="M155 166L142 117L119 111L105 125L99 149" fill="none" stroke="#8195a6" stroke-width="8"/><path d="M157 166L146 123L119 120" fill="none" stroke="#83ceff" stroke-width="2"/><path d="M127 266L156 249L193 266L198 294L175 310L135 294Z" fill="url(#steel)" stroke="#122033" stroke-width="3"/><circle cx="179" cy="284" r="12" fill="#112337" stroke="#83ceff" stroke-width="3"/><g transform="translate(321 117)"><path d="M-30 0L0 -13L30 0L0 15Z" fill="url(#steel)" stroke="#83ceff"/><ellipse cx="-34" cy="0" rx="13" ry="6" fill="#1b3047" stroke="#9cb7c7"/><ellipse cx="34" cy="0" rx="13" ry="6" fill="#1b3047" stroke="#9cb7c7"/><path d="M-9 1L9 1" stroke="#83ceff" stroke-width="4"/></g><path d="M186 242L201 248 M235 242L249 235 M183 318L194 321 M245 322L257 317" stroke="#83ceff" stroke-width="2"/><g fill="#98aabd"><circle cx="174" cy="279" r="2"/><circle cx="265" cy="279" r="2"/><circle cx="153" cy="188" r="2"/><circle cx="287" cy="188" r="2"/></g></svg>
