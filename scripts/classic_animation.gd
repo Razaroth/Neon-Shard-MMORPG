@@ -60,7 +60,7 @@ func sample(player: Dictionary, delta: float) -> Dictionary:
 	var attacking := serial > 0 and float(actor.attack_age) < duration
 	var clip := "attack" if attacking else "run" if moving and running else "walk" if moving else "idle"
 	if moving and distance < 120:
-		actor.phase = fposmod(float(actor.phase) + distance / (100.0 if running else 78.0), 1.0)
+		actor.phase = fposmod(float(actor.phase) + distance / (82.0 if running else 78.0), 1.0)
 	var sheet := "walk"
 	var frame := 0
 	if clip == "walk": frame = 1 + int(float(actor.phase) * 8) % 8

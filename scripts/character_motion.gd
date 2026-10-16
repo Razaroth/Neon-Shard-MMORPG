@@ -16,6 +16,8 @@ static func step(player: Dictionary, delta: float, clock: float) -> void:
 	var target_velocity := direction * speed
 	var velocity: Vector2 = player.get("velocity", Vector2.ZERO)
 	var acceleration: float = Roles.stats(player.archetype).speed * (7.0 if player.archetype == "vanguard" else 10.0)
+	if running:
+		acceleration *= 1.6
 	var braking: float = Roles.stats(player.archetype).speed * 14.0
 	velocity = velocity.move_toward(target_velocity, (braking if direction.is_zero_approx() else acceleration) * delta)
 	if not fresh:

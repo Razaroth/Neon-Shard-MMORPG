@@ -147,11 +147,21 @@ func draw_player(player: Dictionary, local_id: int) -> void:
 	var pose: Dictionary = animation.sample(player, animation_delta)
 	draw_shadow(p, 13 * CHARACTER_SCALE)
 	var scale := maxf(1, roundf(CHARACTER_HEIGHT / SpriteAnimation.VISIBLE_HEIGHT))
-	canvas.draw_set_transform(p, 0, Vector2(-1 if pose.mirror else 1, 1))
-	for layer in SpriteAnimation.layers(player.archetype):
-		var path := "res://assets/lpc/" + str(layer.prefix) + "/" + str(pose.sheet) + ".png"
-		var texture: Texture2D = animation_textures[player.archetype][path]
-		canvas.draw_texture_rect_region(texture, Rect2(-SpriteAnimation.FOOT * scale, SpriteAnimation.CELL * scale), pose.region, layer.color)
+	var facing: Vector2 = player.get("facing", Vector2.RIGHT)
+	var dashing: bool = pose.clip == "run"
+	# Lean the complete drawing around its planted foot; never distort anatomy.
+	var lean := facing.x * 0.11 if dashing else 0.0
+	var passes := [1, 0] if dashing and detailed else [0]
+	for trail in passes:
+		var origin: Vector2 = (p - facing * 19 * int(trail)).round()
+		canvas.draw_set_transform(origin, lean, Vector2.ONE)
+		for layer in SpriteAnimation.layers(player.archetype):
+			var path := "res://assets/lpc/" + str(layer.prefix) + "/" + str(pose.sheet) + ".png"
+			var texture: Texture2D = animation_textures[player.archetype][path]
+			var tint: Color = layer.color
+			if trail > 0:
+				tint = Color(style.color, 0.10)
+			canvas.draw_texture_rect_region(texture, Rect2(-SpriteAnimation.FOOT * scale, SpriteAnimation.CELL * scale), pose.region, tint)
 	canvas.draw_set_transform(Vector2.ZERO, 0, Vector2.ONE)
 	if int(player.id) == local_id:
 		canvas.draw_arc(p, 16 * CHARACTER_SCALE, 0, TAU, 28, Color(style.color, 0.65), 1, true)

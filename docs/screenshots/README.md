@@ -12,7 +12,9 @@ Characters are now **another 20% larger** (164.4 pixels tall), with matching foo
 
 [Open animated GIF](animations.gif) · [Download MP4](animations.mp4) · [Previous six-pose version](https://raw.githubusercontent.com/Razaroth/Neon-Shard-MMORPG/79743d6/docs/screenshots/animations.gif)
 
-This is a new **classic pixel-art RPG movement study**: complete sprite frames replace the rejected bending/warping approach. It uses clear contact/passing poses, eight-frame strides, separate walking/running, four individually drawn directions, and class-specific attacks.
+The latest preview adds a more forceful run: faster acceleration, quicker strides, a forward lean and a faint speed trail (toggle with F8). Maximum class speeds are unchanged.
+
+This is a **classic pixel-art RPG movement study**: complete sprite frames replace the rejected bending/warping approach. It uses clear contact/passing poses, eight-frame strides, separate walking/running, four individually drawn directions, and class-specific attacks.
 
 The credited LPC sprites use artist-authored movement and reference outfits; final cyberpunk class artwork is still needed. The painted city and portraits remain; the main branch is unchanged. [Download this playable preview](https://github.com/Razaroth/Neon-Shard-MMORPG/archive/refs/heads/classic-sprite-preview.zip), extract it, and run `Play-Windows.cmd`.
 

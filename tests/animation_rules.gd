@@ -53,6 +53,19 @@ func _init() -> void:
 		assert(Rect2(Vector2.ZERO, Vector2(Sprites.COUNTS[pose.sheet] * 64, 256)).encloses(pose.region))
 		animation.retain([])
 		assert(animation.actors.is_empty())
+	# Sprint starts more decisively, but retains the class speed cap and collision.
+	for role in Roles.ORDER:
+		var speeds: Array = []
+		for sprint in [false, true]:
+			var actor := {"id": 8, "position": Vector2.ZERO, "input": Vector2.RIGHT, "last_input": 0.0}
+			Combat.new().prepare(actor, {"archetype": role})
+			actor.sprinting = sprint
+			Motion.step(actor, 1.0 / 60, 0.0)
+			speeds.append(actor.velocity.length())
+			assert(actor.velocity.length() <= float(Roles.stats(role).speed))
+			Motion.step(actor, 1.0 / 60, 1.0)
+			assert(not actor.moving and not actor.running, "Stale input must stop a dash")
+		assert(speeds[1] > speeds[0] * 1.5)
 	# The same traveled distance selects the same stride at different display rates.
 	var phases: Array = []
 	for rate in [30, 120]:
