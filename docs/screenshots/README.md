@@ -1,8 +1,20 @@
-# Neon Shard · Kairo Exchange interior
+# Neon Shard · Connected interiors
 
-The active area is now **one continuous cutaway transit hall**, with characters walking inside connected architecture. It replaces the repeated full-building layout with an authored floor, surrounding walls, recessed counters, structural columns, and foreground railings.
+The active areas are **Kairo Exchange and its connected Maintenance Bay**, with characters walking inside connected architecture. It replaces the repeated full-building layout with an authored floor, surrounding walls, recessed counters, structural columns, and foreground railings.
 
 These are actual Godot renders with dynamic game actors. They are staged visual captures; real multiplayer combat and persistence were tested separately.
+
+## Maintenance Bay
+
+![Playable maintenance bay](maintenance.png)
+
+[Open full-size maintenance image](maintenance.png) · [Return doorway](maintenance-door.png) · [Column depth](maintenance-column.png)
+
+Approach the marked doorway and press **E** to move between rooms. The bay has its own machinery, collision geometry and enemies.
+
+![Concourse travel doorway](concourse-travel.png)
+
+[Open concourse travel view](concourse-travel.png)
 
 ## Inside the concourse
 
@@ -42,8 +54,8 @@ Column footprints block movement and attacks. Their silhouettes are depth sorted
 
 ## Current scope
 
-This is one playable interior, using an original generated room painting, registered collision geometry, and dynamic characters/enemies. It is not 3D geometry or a completed connected city. Shops and doorways are environmental set dressing until interactions and room transitions are added. Directional sprite animation and crowds remain future work.
+These are two connected playable interiors, using original generated room paintings, registered collision geometry, and dynamic characters/enemies. It is not 3D geometry or a completed connected city. The marked connecting doorways work; shops and other painted doors remain environmental set dressing. Directional sprite animation and crowds remain future work.
 
-Room collision, navigation around columns, enemy pursuit, blocked attacks, old-save relocation and camera bounds passed their checks. The real two-client integration test also passed movement, combat, mission rewards, character-slot persistence and server restart restoration.
+Room collision, navigation around columns, enemy pursuit, blocked attacks, old-save relocation and camera bounds passed their checks. The real two-client integration test also passed movement, combat, mission rewards, character-slot persistence and server restart restoration, doorway travel, room isolation, maintenance combat, and return travel. Room, health and loot survived a server restart.
 
 The screenshots are not a hardware performance benchmark. This preview branch publishes the gallery; development source remains in the working environment.
